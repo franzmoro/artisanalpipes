@@ -37,6 +37,7 @@ E-commerce website for [artisanalpipes](www.artisanalpipes.com).
 
 #### App state management
 **[Redux.js](https://redux.js.org/)** (**TBC**)
+Store shall be cached to keep track of items in basket.
 
 #### Styling
 **[SASS](http://sass-lang.com/)** due to:
