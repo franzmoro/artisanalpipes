@@ -61,7 +61,7 @@ Images will be hosted on a CDN folder and served by http requests
 
 #### Testing
 - **[Tape](https://github.com/substack/tape)** for front-end (**TBC**) / back-end unit tests
-- **[Nightwatch]**
+- **[Nightwatch](http://nightwatchjs.org/)** for integration tests
 
 #### Building
 - *Transpiling TBC*
@@ -69,3 +69,6 @@ Images will be hosted on a CDN folder and served by http requests
 
 #### Online deployment
 **[Heroku](https://www.heroku.com/)** due to its simplicity, and to prior experience in using it.
+
+#### Online Continuous-Integration
+[Travis-CI](https://travis-ci.org/)
