@@ -38,6 +38,11 @@ E-commerce website for [artisanalpipes](www.artisanalpipes.com).
 #### App state management
 **[Redux.js](https://redux.js.org/)** (**TBC**)
 
+#### Styling
+**[SASS](http://sass-lang.com/)** due to:
+  - allowed use of variables (e.g. mobile screen sizes, breakpoints)
+  - neat syntax
+
 #### Routing
 **[Riot Router](http://riotjs.com/api/route/)** (**TBC**)
 
