@@ -20,6 +20,7 @@ E-commerce website for [artisanalpipes](www.artisanalpipes.com).
 - Basket for items
 - Checkout + shipment info / options
 - Manage payments
+- Confirm order via email
 - Include a **Contact** section
 - Include an **About** section with our values
 - Provide analytics on user behaviour
