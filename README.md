@@ -28,3 +28,39 @@ E-commerce website for [artisanalpipes](www.artisanalpipes.com).
   - add pipe to db
   - update pipe status
 
+## Technical choices
+#### Front-end framework
+**[Riot.js](https://github.com/riot/riot)** due to:
+  - very small size of the minified bundle (meaning low loading times)
+  - re-usability and central store
+  - trying out this technology
+
+#### App state management
+**[Redux.js](https://redux.js.org/)** (**TBC**)
+
+#### Routing
+**[Riot Router](http://riotjs.com/api/route/)** (**TBC**)
+
+#### Server framework
+**[Hapi.js](http://hapijs.com/)**, node-based
+
+#### DB
+**[PostgreSQL](https://www.postgresql.org/)** due to:
+  - relations for pipe data (SQL is ideal)
+  - large Postgres community
+  - prior knowledge
+
+#### Image hosting
+Images will be hosted on a CDN folder and served by http requests
+<!-- TODO to consider admin adding photo functionality -->
+
+#### Testing
+- **[Tape](https://github.com/substack/tape)** for front-end (**TBC**) / back-end unit tests
+- **[Nightwatch]**
+
+#### Building
+- *Transpiling TBC*
+- **[webpack](https://webpack.github.io/docs/)** with **[hot-reloading](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html)**
+
+#### Online deployment
+**[Heroku](https://www.heroku.com/)** due to its simplicity, and to prior experience in using it.
