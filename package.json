@@ -1,0 +1,31 @@
+{
+  "name": "artisanalpipes",
+  "version": "1.0.0",
+  "description": "E-commerce website for [artisanalpipes](www.artisanalpipes.com).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franzmoro/artisanalpipes.git"
+  },
+  "keywords": [],
+  "author": "franzmoro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franzmoro/artisanalpipes/issues"
+  },
+  "homepage": "https://github.com/franzmoro/artisanalpipes#readme",
+  "dependencies": {
+    "hapi": "^15.2.0",
+    "hapi-riot": "^2.1.0",
+    "riot": "^3.0.1",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "riot-cli": "^3.0.0",
+    "tape": "^4.6.3"
+  }
+}
