@@ -4,7 +4,7 @@
   "description": "E-commerce website for [artisanalpipes](www.artisanalpipes.com).",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "npm run compile && node src/index.js",
     "test": "npm run compile && node test/index.test.js",
     "compile": "riot src/views public/bundle.js"
   },
