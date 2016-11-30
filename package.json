@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "npm run compile && node test/index.test.js",
-    "compile": "riot src/views public/views"
+    "compile": "riot src/views public/bundle.js"
   },
   "repository": {
     "type": "git",
