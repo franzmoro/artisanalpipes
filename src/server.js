@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 require('env2')('./.env');
 const Path = require('path');
@@ -7,9 +7,9 @@ const server = new Hapi.Server();
 
 server.connection({
   host: process.env.HOST || 'localhost',
-  port: process.env.PORT || 4000,
-  // tls: true
-  // TODO https
+  port: process.env.PORT || 4000 /*,
+  tls: true
+  TODO https */
 });
 
 server.register(
@@ -37,7 +37,7 @@ server.register(
         layoutPath: Path.join(__dirname, '/layout'),
         layout: true
       }
-    })
+    });
   }
 );
 
