@@ -4,9 +4,11 @@
   "description": "E-commerce website for [artisanalpipes](www.artisanalpipes.com).",
   "main": "index.js",
   "scripts": {
-    "start": "npm run compile && node src/index.js",
-    "test": "npm run compile && node test/index.test.js",
-    "compile": "riot src/views public/bundle.js"
+    "start": "npm run compile:all && node src/index.js",
+    "test": "npm run compile:all && node test/index.test.js",
+    "compile:all": "npm run compile:riot && npm run compile:sass",
+    "compile:riot": "riot src/views public/bundle.js",
+    "compile:sass":"sass src/_sass/index.scss public/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "eslint": "^3.11.1",
     "eslint-plugin-riot": "^0.1.6",
+    "node-sass": "^3.13.0",
     "riot-cli": "^3.0.0",
     "tape": "^4.6.3"
   }

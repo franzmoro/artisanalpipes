@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
+
 const Path = require('path');
 const handlers = require('./handlers/index.js');
 
