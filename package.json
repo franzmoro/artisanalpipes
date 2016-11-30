@@ -8,7 +8,7 @@
     "test": "npm run compile:all && node test/index.test.js",
     "compile:all": "npm run compile:riot && npm run compile:sass",
     "compile:riot": "riot src/views public/bundle.js",
-    "compile:sass":"sass src/_sass/index.scss public/css/style.css"
+    "compile:sass":"node-sass src/_sass/index.scss public/css/style.css"
   },
   "repository": {
     "type": "git",
