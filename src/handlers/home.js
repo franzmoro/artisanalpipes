@@ -3,5 +3,5 @@
 const Path = require('path');
 
 module.exports = (req, reply) => {
-  reply('home');
+  reply.view('home');
 };

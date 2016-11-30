@@ -14,7 +14,8 @@ server.connection({
 
 server.register(
   [
-    require('inert')
+    require('inert'),
+    require('vision')
   ],
   err => {
     if (err) {
@@ -24,6 +25,19 @@ server.register(
     server.route(
       require('./routes.js')
     );
+    server.views({
+      engines: {
+        tag: require('hapi-riot')
+      },
+      relativeTo: __dirname,
+      path: 'views',
+      compileOptions: {
+        compiledFileRoute: '/bundle.js',
+        removeCache: process.env.NODE_ENV === 'production',
+        layoutPath: Path.join(__dirname, '/layout'),
+        layout: true
+      }
+    })
   }
 );
 

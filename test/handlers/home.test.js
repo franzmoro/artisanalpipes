@@ -1,5 +1,9 @@
 const test = require('tape');
+const fs = require('fs');
+const Path = require('path');
 const server = require('../../src/server.js');
+
+const fileUtils = require('../utils/files.js');
 
 test('home page is served', t => {
   const req = {
@@ -8,7 +12,20 @@ test('home page is served', t => {
   };
   server.inject(req, res => {
     t.equal(res.statusCode, 200, '200 status code');
-    t.ok(res.payload, 'home', 'correct response');
+    console.log('res.payload', res.payload);
+    const actual = res.payload;
+    const template = fileUtils.readFile(
+      __dirname,
+      '../../src/layout/layout.html'
+    );
+    const homeViewMock = fileUtils.readFile(
+      __dirname,
+      '../mock_data/views/home.html'
+    );
+    const expected = fileUtils.trimLastLine(
+      template.replace('<<<RIOT>>>', homeViewMock)
+    );
+    t.equal(actual, expected, 'correct response');
     t.end();
   });
 });
