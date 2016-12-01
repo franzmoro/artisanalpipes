@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run compile:all && node src/index.js",
-    "start:w": "npm run compile:all && node src/index.js",
+    "start:w": "parallelshell 'npm run compile:all:w' 'nodemon src/index.js'",
     "test": "npm run compile:all && node test/index.test.js",
     "compile:riot": "riot src/views public/bundle.js",
     "compile:riot:w": "riot -w src/views public/bundle.js",
-    "compile:sass":"node-sass src/_sass/index.scss public/css/style.css",
-    "compile:sass:w":"node-sass -w src/_sass/index.scss public/css/style.css",
+    "compile:sass": "node-sass src/_sass/index.scss public/css/style.css",
+    "compile:sass:w": "sass -w src/_sass/index.scss:public/css/style.css",
     "compile:all": "npm run compile:riot && npm run compile:sass",
-    "compile:all:w": "npm run compile:riot:w && npm run compile:sass:w"
+    "compile:all:w": "npm run compile:riot:w & npm run compile:sass:w"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "eslint": "^3.11.1",
     "eslint-plugin-riot": "^0.1.6",
     "node-sass": "^3.13.0",
+    "parallelshell": "^2.0.0",
     "riot-cli": "^3.0.0",
     "tape": "^4.6.3"
   }
