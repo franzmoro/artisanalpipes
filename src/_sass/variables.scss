@@ -1,0 +1,26 @@
+@import '_fonts.scss';
+
+// SIZES
+$num-header-items: 5;
+/* TODO
+mobile-small
+mobile-large
+tablet-size
+destkop-small
+destkop-medium
+destkop-large
+*/
+// COLORS
+$main-theme-color: #984927;
+$dark-brown: #57231C;
+$light-brown: #9F4F1B;
+
+$header-startingColor: #585858;
+$header-endingColor: #d8dada;
+$header-textColor: #2c2c2c;
+$header-selectedColor: $light-brown;
+
+// FONTS
+$title-font: 'Kaushan';
+$header-font: 'Yellowtail';
+$text-font: 'Parisienne';

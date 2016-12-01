@@ -65,9 +65,10 @@ Images will be hosted on a CDN folder and served by http requests
 - **[Tape](https://github.com/substack/tape)** for front-end (**TBC**) / back-end unit tests
 - **[Nightwatch](http://nightwatchjs.org/)** for integration tests
 
-#### Building
+#### Building / Pre-compiling
 - *Transpiling TBC*
-- **[webpack](https://webpack.github.io/docs/)** with **[hot-reloading](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html)**
+- ```.tag``` files are built by Riot
+- ```.scss``` files are compiled with node-sass
 
 #### Online deployment
 **[Heroku](https://www.heroku.com/)** due to its simplicity, and to prior experience in using it.

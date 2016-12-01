@@ -35,7 +35,12 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
 # bundles
 public
+
 # config
 .env
+
+# sass
+.sass-cache
