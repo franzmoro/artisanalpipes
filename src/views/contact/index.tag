@@ -1,3 +1,3 @@
 <home>
-  <header></header>
+  <header selected={'CONTACT'}></header>
 </home>

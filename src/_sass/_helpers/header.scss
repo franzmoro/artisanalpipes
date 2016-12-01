@@ -26,5 +26,8 @@
       font-size: 2.5em;
       color: $header-textColor;
     }
+    .app-header-link.selected {
+      color: $header-selectedColor;
+    }
   }
 }

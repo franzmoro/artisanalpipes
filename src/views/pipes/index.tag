@@ -1,3 +1,3 @@
-<home>
-  <header></header>
-</home>
+<pipes>
+  <header selected={'PIPES'}></header>
+</pipes>

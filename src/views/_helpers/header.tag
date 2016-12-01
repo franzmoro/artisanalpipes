@@ -1,13 +1,17 @@
 <header>
   <ul class='app-header'>
     <li class='app-header-item' each='{item in items}'>
-      <a href='{item.link}' class='app-header-link {item.selected} {item.additionalClass || ''}'>
+      <a href='{item.link}' class='app-header-link'>
         {item.title}
-        <img src='{item.image.src}' alt='{item.image.alt}' class='app-header-item-image'/>
+        <img class='app-header-item-image'
+          src='{item.image.src}'
+          alt='{item.image.alt}'
+          />
       </a>
     </li>
   </ul>
   <script>
+    const isSelected = title => title === opts.selected;
     this.items = [{
       title: '',
       link: '#',
@@ -15,19 +19,17 @@
         src: '/assets/AP_logo.png',
         alt: ''
       }
-    }, {
-      title: 'PIPES',
-      link: '/pipes'
-    }, {
-      title: 'ABOUT',
-      link: '/about'
-    }, {
-      title: 'CONTACT',
-      link: '/contact'
-    }, {
+    }].concat(
+      [ 'PIPES', 'ABOUT', 'CONTACT' ].map(title => ({
+        title,
+        link: isSelected(title) ? '' : `/${title.toLowerCase()}`,
+        isSelected: isSelected(title)
+      }))
+    ).concat([{
       title: '',
       link: '/checkout',
+      isSelected: isSelected('CHECKOUT')
       // image:
-    }];
+    }]);
   </script>
 </header>
