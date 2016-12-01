@@ -4,18 +4,23 @@
   list-style-type: none;
   padding: 2em 0;
   width: 100%;
-  border: 1px solid red;
+  height: 4em;
   text-align: center;
-}
-.app-header-item {
-  display: inline-block;
-  width: 100% / $num-header-items;
-  text-align: center;
-  .basket {
-    border: 2px solid orange;
+  background: linear-gradient(0deg, $header-startingColor, $header-endingColor);
+
+  .app-header-item {
+    display: inline-block;
+    width: 100% / $num-header-items;
+    text-align: center;
+
+    .app-header-item-image {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .app-header-link {
+      text-decoration: none;
+      font-size: 1.5em;
+    }
   }
-}
-.app-header-link {
-  text-decoration: none;
-  font-size: 1.5em;
 }
