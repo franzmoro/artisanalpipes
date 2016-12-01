@@ -78,3 +78,14 @@ test('routes:CHECKOUT', t => {
     t.end();
   });
 });
+
+test('routes:PIPES', t => {
+  const req = {
+    method: 'GET',
+    url: '/pipes'
+  };
+  server.inject(req, res => {
+    t.notEqual(res.statusCode, 404, 'route exists');
+    t.end();
+  });
+});

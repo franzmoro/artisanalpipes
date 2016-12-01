@@ -9,6 +9,10 @@ module.exports = [{
   handler: handlers.home
 }, {
   method: 'GET',
+  path: '/pipes',
+  handler: handlers.home
+}, {
+  method: 'GET',
   path: '/about',
   handler: handlers.about
 }, {
