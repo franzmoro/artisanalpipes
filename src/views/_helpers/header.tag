@@ -22,7 +22,7 @@
     }].concat(
       [ 'PIPES', 'ABOUT', 'CONTACT' ].map(title => ({
         title,
-        link: isSelected(title) ? '' : `/${title.toLowerCase()}`,
+        link: isSelected(title) ? '' : '/' + title.toLowerCase(),
         isSelected: isSelected(title)
       }))
     ).concat([{
