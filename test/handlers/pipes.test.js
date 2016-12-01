@@ -1,7 +1,7 @@
 const test = require('tape');
 const server = require('../../src/server.js');
 
-const fileUtils = require('../utils/files.js');
+// const fileUtils = require('../utils/files.js');
 
 test('home page is served', t => {
   const req = {

@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = (req, reply) => {
-  reply.view('about');
+  reply.view('about/index');
 };

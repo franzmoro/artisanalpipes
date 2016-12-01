@@ -6,11 +6,11 @@ const handlers = require('./handlers/index.js');
 module.exports = [{
   method: 'GET',
   path: '/',
-  handler: handlers.home
+  handler: handlers.pipes
 }, {
   method: 'GET',
   path: '/pipes',
-  handler: handlers.home
+  handler: handlers.pipes
 }, {
   method: 'GET',
   path: '/about',
