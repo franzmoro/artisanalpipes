@@ -1,5 +1,5 @@
-<header class='app-header'>
-  <ul class='app-header-list'>
+<header>
+  <ul class='app-header'>
     <li class='app-header-item' each="{item in items}">
       <a href="{item.link}" class='app-header-link {item.selected} {item.additionalClass || ''}'>
         {item.title}

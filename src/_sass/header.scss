@@ -1,6 +1,21 @@
-.app-header-list {
+@import 'variables.scss';
+
+.app-header {
   list-style-type: none;
+  padding: 2em 0;
+  width: 100%;
+  border: 1px solid red;
+  text-align: center;
+}
+.app-header-item {
+  display: inline-block;
+  width: 100% / $num-header-items;
+  text-align: center;
+  .basket {
+    border: 2px solid orange;
+  }
 }
 .app-header-link {
   text-decoration: none;
+  font-size: 1.5em;
 }
