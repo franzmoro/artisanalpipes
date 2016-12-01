@@ -1,10 +1,22 @@
 @import 'variables.scss';
 
-html, body {
+html, body, img, div {
   padding: 0;
   margin: 0;
 }
 
 body {
-  background: linear-gradient(45deg, $light-brown, $dark-brown);
+  background: linear-gradient(45deg,
+    $light-brown,
+    $dark-brown 10%,
+    $light-brown 20%,
+    $dark-brown 30%,
+    $light-brown 40%,
+    $dark-brown 50%,
+    $dark-brown 60%,
+    $light-brown 70%,
+    $dark-brown 80%,
+    $light-brown 90%,
+    $dark-brown 100%
+  );
 }
