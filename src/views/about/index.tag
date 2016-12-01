@@ -1,3 +1,3 @@
-<home>
+<about>
   <header selected={'ABOUT'}></header>
-</home>
+</about>

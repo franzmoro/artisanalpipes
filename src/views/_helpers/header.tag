@@ -1,7 +1,7 @@
 <header>
   <ul class='app-header'>
     <li class='app-header-item' each='{item in items}'>
-      <a href='{item.link}' class='app-header-link'>
+      <a href='{item.link}' class='app-header-link {selected:item.isSelected}'>
         {item.title}
         <img class='app-header-item-image'
           src='{item.image.src}'
