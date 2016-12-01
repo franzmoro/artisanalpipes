@@ -1,6 +1,4 @@
 const test = require('tape');
-const fs = require('fs');
-const Path = require('path');
 const server = require('../../src/server.js');
 
 const fileUtils = require('../utils/files.js');
