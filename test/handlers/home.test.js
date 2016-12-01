@@ -12,7 +12,6 @@ test('home page is served', t => {
   };
   server.inject(req, res => {
     t.equal(res.statusCode, 200, '200 status code');
-    console.log('res.payload', res.payload);
     const actual = res.payload;
     const template = fileUtils.readFile(
       __dirname,
