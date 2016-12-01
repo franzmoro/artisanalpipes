@@ -1,3 +1,5 @@
+@import '_fonts.scss';
+
 // SIZES
 $num-header-items: 5;
 
@@ -8,3 +10,8 @@ $light-brown: #9F4F1B;
 
 $header-startingColor: #3e4a4a;
 $header-endingColor: #9fa4a5;
+
+// FONTS
+$title-font: 'Kaushan';
+$header-font: 'Yellowtail';
+$text-font: 'Parisienne';
