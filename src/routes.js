@@ -9,6 +9,18 @@ module.exports = [{
   handler: handlers.home
 }, {
   method: 'GET',
+  path: '/about',
+  handler: handlers.about
+}, {
+  method: 'GET',
+  path: '/checkout',
+  handler: handlers.checkout
+}, {
+  method: 'GET',
+  path: '/contact',
+  handler: handlers.contact
+}, {
+  method: 'GET',
   path: '/{param*}',
   handler: {
     directory: {

@@ -3,17 +3,6 @@ const server = require('../src/server.js');
 const fs = require('fs');
 const path = require('path');
 
-test('routes:HOME', t => {
-  const req = {
-    method: 'GET',
-    url: '/'
-  };
-  server.inject(req, res => {
-    t.notEqual(res.statusCode, 404, 'home route exists');
-    t.end();
-  });
-});
-
 test('routes:STATIC-CONTENT (bundle.js)', t => {
   const req = {
     method: 'GET',
@@ -30,7 +19,7 @@ test('routes:STATIC-CONTENT (bundle.js)', t => {
   });
 });
 
-test('routes:STATIC-CONTENT (bundle.js)', t => {
+test('routes:STATIC-CONTENT (style.css)', t => {
   const req = {
     method: 'GET',
     url: '/css/style.css'
@@ -42,6 +31,50 @@ test('routes:STATIC-CONTENT (bundle.js)', t => {
       'utf-8'
     );
     t.equal(actual, expected, 'serves style.css file compiled from sass');
+    t.end();
+  });
+});
+
+test('routes:INDEX', t => {
+  const req = {
+    method: 'GET',
+    url: '/'
+  };
+  server.inject(req, res => {
+    t.notEqual(res.statusCode, 404, 'route exists');
+    t.end();
+  });
+});
+
+test('routes:ABOUT', t => {
+  const req = {
+    method: 'GET',
+    url: '/about'
+  };
+  server.inject(req, res => {
+    t.notEqual(res.statusCode, 404, 'route exists');
+    t.end();
+  });
+});
+
+test('routes:CONTACT', t => {
+  const req = {
+    method: 'GET',
+    url: '/contact'
+  };
+  server.inject(req, res => {
+    t.notEqual(res.statusCode, 404, 'route exists');
+    t.end();
+  });
+});
+
+test('routes:CHECKOUT', t => {
+  const req = {
+    method: 'GET',
+    url: '/checkout'
+  };
+  server.inject(req, res => {
+    t.notEqual(res.statusCode, 404, 'route exists');
     t.end();
   });
 });
