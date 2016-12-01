@@ -12,7 +12,7 @@
     "compile:sass": "node-sass src/_sass/index.scss public/css/style.css",
     "compile:sass:w": "sass -w src/_sass/index.scss:public/css/style.css",
     "compile:all": "npm run compile:riot && npm run compile:sass",
-    "compile:all:w": "npm run compile:riot:w & npm run compile:sass:w"
+    "compile:all:w": "parallelshell 'npm run compile:sass:w' 'npm run compile:riot:w'"
   },
   "repository": {
     "type": "git",
