@@ -2,7 +2,7 @@
   <div class='pipes-carousel'>
     <div class='pipes-carousel-imageContainer'>
       <img id='item-{opts.identifier}-{itemIdx}'
-        src='/items/{opts.identifier}/{itemIdx}'
+        src='/assets/pipes/{opts.identifier}/{itemIdx}.jpg'
         />
     </div>
     <div class='pipes-carousel-arrowLeft' onclick='{moveLeft}'></div>

@@ -11,6 +11,8 @@ module.exports = {
     reply.view('contact/index');
   },
   pipes: (req, reply) => {
-    reply.view('pipes/index');
+    reply.view('pipes/index', {
+      items: require('../../pipes.json')
+    });
   }
 };
