@@ -73,3 +73,8 @@ Images will be hosted on a CDN folder and served by http requests
 
 #### Online Continuous-Integration
 [Travis-CI](https://travis-ci.org/)
+
+## Dev setup
+- ```git clone https://github.com/franzmoro/artisanalpipes``` (clone repo)
+- ```npm i``` (install node_modules)
+- ```npm run start:w``` (bundles riot ```.tag``` files, bundles sass into css & starts server)
