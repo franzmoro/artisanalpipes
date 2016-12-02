@@ -6,10 +6,9 @@
       description={item.description}
       technical={item.technical}
       price={item.price}
-      priceUnit={item.priceUnit}
+      priceunit={item.priceunit}
     ></itemContainer>
   </div>
   <script>
-    
   </script>
 </itemsGallery>

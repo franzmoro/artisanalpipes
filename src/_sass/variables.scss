@@ -1,5 +1,4 @@
 @import '_fonts.scss';
-
 // SIZES
 $num-header-items: 5;
 $header-height: 3.5em;
@@ -12,6 +11,13 @@ destkop-small
 destkop-medium
 destkop-large
 */
+$numItemsPerWidth: 2;
+$item-containerMarginHorizontal: 0.25%;
+$item-containerWidth: (100% / $numItemsPerWidth) - (
+  $item-containerMarginHorizontal * $numItemsPerWidth * 2
+);
+$item-containerHeight-mobile: 20vh;
+$item-containerHeight-desktop: 50vh;
 // COLORS
 $main-theme-color: #984927;
 $dark-brown: #57231C;
@@ -19,9 +25,10 @@ $light-brown: #9F4F1B;
 
 $header-startingColor: #585858;
 $header-endingColor: #d8dada;
-$header-textColor: #2c2c2c;
+$header-textColor: #272727;
 $header-selectedColor: $light-brown;
 
+$item-titleColor: #979898;
 // FONTS
 $title-font: 'Kaushan';
 $header-font: 'Yellowtail';

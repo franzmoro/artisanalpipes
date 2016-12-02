@@ -1,8 +1,14 @@
 <header>
   <ul class='app-header'>
-    <img src='/assets/AP_logo_3_small.png' alt='Artisanal Pipes' class='app-header-item header-logo' />
+    <img
+      src='/assets/logos/AP_logo_3_small.png'
+      alt='Artisanal Pipes' class='app-header-item header-logo'
+      />
     <li class='app-header-item header-text' each='{item in items}'>
-      <a href='{item.link}' class='{app-header-link: !item.image}  {selected:item.isSelected}'>
+      <a
+        href='{item.link}'
+        class='{app-header-link: !item.image}  {selected:item.isSelected}'
+        >
         {item.title}
         <img class='app-header-item-image header-logo'
           src='{item.image.src}'
