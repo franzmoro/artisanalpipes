@@ -1,10 +1,14 @@
 <itemContainer>
   <div class='pipes-itemContainer'>
-    <div class='pipes-itemTitle'>
-      {opts.name}
-    </div>
-    <div class='pipes-itemDetails'>
-      <p>{opts.priceunit} {opts.price.toLocaleString()}</p>
+    <div class='pipes-titleDetailsContainer'>
+      <span class='pipes-itemTitle'>
+        {opts.name}
+      </span>
+      <span class='pipes-itemDetails'>
+        <span class='actionIcon addToBasket pointer' onclick='{addToBasket}' />
+        <span class='actionIcon showInfo pointer' onclick='{showInfo}' />
+        {opts.priceunit} {opts.price.toLocaleString()}
+      </span>
     </div>
     <itemCarousel
       identifier={opts.identifier}
@@ -16,6 +20,11 @@
       ></itemCarousel>
   </div>
   <script>
-
+    this.showInfo = () => {
+      console.log('info');
+    };
+    this.addToBasket = () => {
+      console.log('added to basket');
+    };
   </script>
 </itemContainer>

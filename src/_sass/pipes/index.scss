@@ -21,7 +21,6 @@
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   display: inline-block;
-  cursor: pointer;
 }
 .pipes-carousel-arrowRight {
   float: right;
@@ -43,19 +42,37 @@
 
 .pipes-itemTitle, .pipes-itemDetails {
   height: 2em;
-  display: inline-block;
+  line-height: 2.5em;
   width: 49%;
   font-family: cursive;
+  color: $item-titleColor;
+  display: inline-block;
 }
 
 .pipes-itemTitle {
   font-family: $title-font;
   font-size: 2em;
-  line-height: 2.5em;
   text-indent: 0.5em;
 }
 
 .pipes-itemDetails {
   font-size: 1.5em;
   text-align: right;
+}
+
+.actionIcon {
+  display: inline-block;
+  width: 12%;
+  margin-right: 0.5em;
+}
+.addToBasket {
+  background: url('/assets/shopping_cart.png') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  height: 100%;
+}
+.showInfo {
+  background: url('/assets/document.png') no-repeat;
+  background-size: contain;
+  height: 75%;
 }

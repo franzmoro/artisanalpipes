@@ -1,7 +1,7 @@
 <itemCarousel>
   <div class='pipes-carousel'>
-    <div class='pipes-carousel-arrowLeft' onclick='{moveLeft}'></div>
-    <div class='pipes-carousel-arrowRight' onclick='{moveRight}'></div>
+    <div class='pipes-carousel-arrowLeft pointer' onclick='{moveLeft}'></div>
+    <div class='pipes-carousel-arrowRight pointer' onclick='{moveRight}'></div>
     <div class='pipes-carousel-imageContainer'>
       <img id='item-{opts.identifier}-{itemIdx}'
         class='pipes-carousel-image'
