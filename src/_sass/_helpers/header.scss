@@ -12,16 +12,13 @@
   text-align: center;
   font-family: $header-font, 'cursive';
 
-  .logo {
-    display: inline-block;
+  .header-logo {
     max-height: $header-height;
-    margin: 0;
-    padding: 0;
   }
 
   .app-header-item {
     display: inline-block;
-    width: 100% / $num-header-items;
+    max-width: 100% / $num-header-items;
     text-align: center;
 
     .app-header-link {
@@ -33,5 +30,8 @@
     .app-header-link.selected {
       color: $header-selectedColor;
     }
+  }
+  .header-text {
+    width: 100% / $num-header-items;
   }
 }
