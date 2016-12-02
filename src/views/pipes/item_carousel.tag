@@ -9,7 +9,6 @@
     <div class='pipes-carousel-arrowRight' onclick='{moveRight}'></div>
   </div>
   <script>
-  console.log('opts', opts);
     this.itemIdx = 0;
     this.moveLeft = () => {
       previousImage();
@@ -18,7 +17,7 @@
     this.moveRight = () => {
       nextImage();
       this.update();
-      
+
     };
     const nextImage = () => {
       if (this.itemIdx < opts.numimages-1) { this.itemIdx++; }
