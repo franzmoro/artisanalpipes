@@ -1,9 +1,16 @@
 <header>
   <ul class='app-header'>
-    <li class='app-header-item' each='{item in items}'>
-      <a href='{item.link}' class='app-header-link {selected:item.isSelected}'>
+    <img
+      src='/assets/logos/AP_logo_3_small.png'
+      alt='Artisanal Pipes' class='app-header-item header-logo'
+      />
+    <li class='app-header-item header-text' each='{item in items}'>
+      <a
+        href='{item.link}'
+        class='{app-header-link: !item.image}  {selected:item.isSelected}'
+        >
         {item.title}
-        <img class='app-header-item-image'
+        <img class='app-header-item-image header-logo'
           src='{item.image.src}'
           alt='{item.image.alt}'
           />
@@ -11,25 +18,20 @@
     </li>
   </ul>
   <script>
-    const isSelected = title => title === opts.selected;
-    this.items = [{
-      title: '',
-      link: '#',
-      image: {
-        src: '/assets/AP_logo.png',
-        alt: ''
+    const isSelected = title => (title === opts.selected);
+    this.items = [
+      { title: 'PIPES' },
+      { title: 'ABOUT' },
+      { title: 'CONTACT' },
+      {
+        title: 'CHECKOUT',
+        image: { src: '/assets/shopping_cart.png', alt: 'checkout' }
       }
-    }].concat(
-      [ 'PIPES', 'ABOUT', 'CONTACT' ].map(title => ({
-        title,
-        link: isSelected(title) ? '' : '/' + title.toLowerCase(),
-        isSelected: isSelected(title)
-      }))
-    ).concat([{
-      title: '',
-      link: '/checkout',
-      isSelected: isSelected('CHECKOUT')
-      // image:
-    }]);
+    ].map(item => ({
+      title: item.image ? '' : item.title,
+      link: isSelected(item.title) ? '' : '/' + item.title.toLowerCase(),
+      isSelected: isSelected(item.title),
+      image: item.image
+    }));
   </script>
 </header>

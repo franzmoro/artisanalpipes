@@ -6,23 +6,23 @@ const handlers = require('./handlers/index.js');
 module.exports = [{
   method: 'GET',
   path: '/',
-  handler: handlers.pipes
+  handler: handlers.views.pipes
 }, {
   method: 'GET',
   path: '/pipes',
-  handler: handlers.pipes
+  handler: handlers.views.pipes
 }, {
   method: 'GET',
   path: '/about',
-  handler: handlers.about
+  handler: handlers.views.about
 }, {
   method: 'GET',
   path: '/checkout',
-  handler: handlers.checkout
+  handler: handlers.views.checkout
 }, {
   method: 'GET',
   path: '/contact',
-  handler: handlers.contact
+  handler: handlers.views.contact
 }, {
   method: 'GET',
   path: '/{param*}',

@@ -1,1 +1,78 @@
 @import '../variables.scss';
+
+.pipes-itemContainer {
+  width: $item-containerWidth;
+  margin: 0.25em $item-containerMarginHorizontal;
+  display: inline-block;
+}
+
+.pipes-carousel {
+  width: 100%;
+  height: $item-containerHeight-desktop;
+  background-color: $header-endingColor;
+  background: rgba(216, 218, 218, 0.1);
+}
+
+.pipes-carousel-arrowRight, .pipes-carousel-arrowLeft {
+  position: relative;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  display: inline-block;
+}
+.pipes-carousel-arrowRight {
+  float: right;
+  margin-right: 2.5%;
+  border-left: 1em solid $header-textColor;
+}
+.pipes-carousel-arrowLeft {
+  float: left;
+  margin-left: 2.5%;
+  border-right: 1em solid $header-textColor;
+}
+
+.pipes-carousel-image {
+  display: block;
+  margin: auto;
+  max-height: $item-containerHeight-desktop;
+  max-width: 100%;
+}
+
+.pipes-itemTitle, .pipes-itemDetails {
+  height: 2em;
+  line-height: 2.5em;
+  width: 49%;
+  font-family: cursive;
+  color: $item-titleColor;
+  display: inline-block;
+}
+
+.pipes-itemTitle {
+  font-family: $title-font;
+  font-size: 2em;
+  text-indent: 0.5em;
+}
+
+.pipes-itemDetails {
+  font-size: 1.5em;
+  text-align: right;
+}
+
+.actionIcon {
+  display: inline-block;
+  width: 12%;
+  margin-right: 0.5em;
+}
+.addToBasket {
+  background: url('/assets/shopping_cart.png') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  height: 100%;
+}
+.showInfo {
+  background: url('/assets/document.png') no-repeat;
+  background-size: contain;
+  height: 75%;
+}

@@ -6,7 +6,7 @@ html, body, img, div {
 }
 
 body {
-  background: linear-gradient(45deg,
+  background: linear-gradient(90deg,
     $light-brown,
     $dark-brown 10%,
     $light-brown 20%,
@@ -19,4 +19,8 @@ body {
     $light-brown 90%,
     $dark-brown 100%
   );
+}
+
+.pointer {
+  cursor: pointer;
 }

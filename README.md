@@ -30,15 +30,13 @@ E-commerce website for [artisanalpipes](www.artisanalpipes.com).
   - update pipe status
 
 ## Technical choices
-#### Front-end framework
+#### Templating framework
 **[Riot.js](https://github.com/riot/riot)** due to:
   - very small size of the minified bundle (meaning low loading times)
-  - re-usability and central store
-  - trying out this technology
+  - component-based code
 
 #### App state management
-**[Redux.js](https://redux.js.org/)** (**TBC**)
-Store shall be cached to keep track of items in basket.
+- Cache basket items as session data? (**TBC**)
 
 #### Styling
 **[SASS](http://sass-lang.com/)** due to:
@@ -46,7 +44,7 @@ Store shall be cached to keep track of items in basket.
   - neat syntax
 
 #### Routing
-**[Riot Router](http://riotjs.com/api/route/)** (**TBC**)
+A combination of Hapi.js, hapi's **[vision](https://github.com/hapijs/vision)** and **[hapi-riot](https://github.com/dwyl/hapi-riot)**. Very simple indeed!
 
 #### Server framework
 **[Hapi.js](http://hapijs.com/)**, node-based
@@ -75,3 +73,8 @@ Images will be hosted on a CDN folder and served by http requests
 
 #### Online Continuous-Integration
 [Travis-CI](https://travis-ci.org/)
+
+## Dev setup
+- ```git clone https://github.com/franzmoro/artisanalpipes``` (clone repo)
+- ```npm i``` (install node_modules)
+- ```npm run start:w``` (bundles riot ```.tag``` files, bundles sass into css & starts server)
