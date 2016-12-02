@@ -13,16 +13,10 @@
   </ul>
   <script>
     const isSelected = title => title === opts.selected;
-    this.items = [ 'PIPES', 'ABOUT', 'CONTACT' ].map(title => ({
-        title,
-        link: isSelected(title) ? '' : '/' + title.toLowerCase(),
-        isSelected: isSelected(title)
-      })
-    ).concat([{
-      title: '',
-      link: '/checkout',
-      isSelected: isSelected('CHECKOUT')
-      // image:
-    }]);
+    this.items = [ 'PIPES', 'ABOUT', 'CONTACT', 'BASKET' ].map(title => ({
+      title,
+      link: isSelected(title) ? '' : '/' + title.toLowerCase(),
+      isSelected: isSelected(title)
+    }));
   </script>
 </header>
