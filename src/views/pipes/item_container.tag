@@ -6,7 +6,7 @@
       </span>
       <span class='pipes-itemDetails'>
         <span class='actionIcon addToBasket pointer' onclick='{addToBasket}' />
-        <span class='actionIcon showInfo pointer' onclick='{showInfo}' />
+        <span class='actionIcon showInfo pointer' onclick='{toggleInfo}' />
         {opts.priceunit} {opts.price.toLocaleString()}
       </span>
     </div>
@@ -17,11 +17,15 @@
       unit={opts.unit}
       description={opts.description}
       numimages={opts.numimages}
-      ></itemCarousel>
+      >
+    </itemCarousel>
+    <div name='itemInfo' class='pipes-itemDescription hide'>
+      <p>{opts.description}</p>
+    </div>
   </div>
-  <script>
-    this.showInfo = () => {
-      console.log('info');
+  <script> 
+    this.toggleInfo = () => {
+      this.itemInfo.classList.toggle('hide');
     };
     this.addToBasket = () => {
       console.log('added to basket');

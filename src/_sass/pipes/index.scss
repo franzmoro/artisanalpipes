@@ -7,6 +7,8 @@
 }
 
 .pipes-carousel {
+  float: left;
+  margin-right: -100%;
   width: 100%;
   height: $item-containerHeight-desktop;
   background-color: $header-endingColor;
@@ -21,6 +23,7 @@
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   display: inline-block;
+  z-index: 3;
 }
 .pipes-carousel-arrowRight {
   float: right;
@@ -75,4 +78,14 @@
   background: url('/assets/document.png') no-repeat;
   background-size: contain;
   height: 75%;
+}
+.pipes-itemDescription {
+  float:right;
+  top: -$item-containerHeight-desktop;
+  width: 70%;
+  padding: 0 15%;
+  height: $item-containerHeight-desktop;
+  z-index: 2;
+  background-color: grey;
+  opacity: 0.7;
 }
