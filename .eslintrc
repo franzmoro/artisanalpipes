@@ -1,5 +1,9 @@
 {
-  "plugins": ["riot"],
+  "plugins": ["html"],
+  "settings": {
+    "html/indent": "+2",
+    "html/report-bad-indent": 1,
+  },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -8,9 +12,11 @@
   "globals": {
     "riot": true,
     "opts": true,
+    "XMLHttpRequest": true
   },
   "env": {
-    "node": true
+    "node": true,
+    "browser": true
   },
   "rules": {
     "comma-dangle": 1,
