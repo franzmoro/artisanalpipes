@@ -7,6 +7,9 @@
         class='pipes-carousel-image'
         src='/assets/pipes/{opts.identifier}/{itemIdx}.jpg'
         />
+      <div id='itemInfo' class='pipes-itemDescription hide'>
+        <p>{opts.description}</p>
+      </div>
     </div>
   </div>
   <script>

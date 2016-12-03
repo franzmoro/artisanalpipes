@@ -11,6 +11,7 @@
       </span>
     </div>
     <itemCarousel
+      name='carousel'
       identifier={opts.identifier}
       name={opts.name}
       price={opts.price}
@@ -19,13 +20,11 @@
       numimages={opts.numimages}
       >
     </itemCarousel>
-    <div name='itemInfo' class='pipes-itemDescription hide'>
-      <p>{opts.description}</p>
-    </div>
   </div>
-  <script> 
+  <script>
     this.toggleInfo = () => {
-      this.itemInfo.classList.toggle('hide');
+      this.carousel.querySelector('#itemInfo').classList.toggle('hide');
+      this.update();
     };
     this.addToBasket = () => {
       console.log('added to basket');
