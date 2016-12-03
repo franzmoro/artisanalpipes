@@ -1,3 +1,5 @@
+'use strict';
+
 const test = require('tape');
 const server = require('../src/server.js');
 

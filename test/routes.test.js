@@ -1,3 +1,5 @@
+'use strict';
+
 const test = require('tape');
 const server = require('../src/server.js');
 const fs = require('fs');
@@ -35,7 +37,7 @@ test('routes:STATIC-CONTENT (style.css)', t => {
   });
 });
 
-test('routes:INDEX', t => {
+test('routes:VIEWS:INDEX', t => {
   const req = {
     method: 'GET',
     url: '/'
@@ -46,7 +48,7 @@ test('routes:INDEX', t => {
   });
 });
 
-test('routes:ABOUT', t => {
+test('routes:VIEWS:ABOUT', t => {
   const req = {
     method: 'GET',
     url: '/about'
@@ -57,7 +59,7 @@ test('routes:ABOUT', t => {
   });
 });
 
-test('routes:CONTACT', t => {
+test('routes:VIEWS:CONTACT', t => {
   const req = {
     method: 'GET',
     url: '/contact'
@@ -68,7 +70,7 @@ test('routes:CONTACT', t => {
   });
 });
 
-test('routes:CHECKOUT', t => {
+test('routes:VIEWS:CHECKOUT', t => {
   const req = {
     method: 'GET',
     url: '/checkout'
@@ -79,10 +81,21 @@ test('routes:CHECKOUT', t => {
   });
 });
 
-test('routes:PIPES', t => {
+test('routes:VIEWS:PIPES', t => {
   const req = {
     method: 'GET',
     url: '/pipes'
+  };
+  server.inject(req, res => {
+    t.notEqual(res.statusCode, 404, 'route exists');
+    t.end();
+  });
+});
+
+test('routes:ITEMS', t => {
+  const req = {
+    method: 'GET',
+    url: '/items'
   };
   server.inject(req, res => {
     t.notEqual(res.statusCode, 404, 'route exists');
