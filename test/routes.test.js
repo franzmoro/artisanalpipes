@@ -91,14 +91,3 @@ test('routes:VIEWS:PIPES', t => {
     t.end();
   });
 });
-
-test('routes:ITEMS', t => {
-  const req = {
-    method: 'GET',
-    url: '/items'
-  };
-  server.inject(req, res => {
-    t.notEqual(res.statusCode, 404, 'route exists');
-    t.end();
-  });
-});
