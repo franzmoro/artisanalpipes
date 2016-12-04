@@ -8,7 +8,9 @@
         src='/assets/pipes/{opts.identifier}/{itemIdx}.jpg'
         />
       <div id='itemInfo' class='pipes-itemDescription hide'>
-        <p>{opts.description}</p>
+        <div class='text'>
+          {opts.description}
+        </div>
       </div>
     </div>
   </div>
