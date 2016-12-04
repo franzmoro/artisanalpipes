@@ -24,3 +24,10 @@ body {
 .pointer {
   cursor: pointer;
 }
+.hide {
+  display: none;
+}
+p, .text {
+  font-family: $text-font;
+  font-size: 1em;
+}

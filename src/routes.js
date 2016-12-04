@@ -4,6 +4,7 @@ const Path = require('path');
 const handlers = require('./handlers/index.js');
 
 module.exports = [{
+// VIEWS
   method: 'GET',
   path: '/',
   handler: handlers.views.pipes
@@ -24,6 +25,7 @@ module.exports = [{
   path: '/contact',
   handler: handlers.views.contact
 }, {
+// STATIC CONTENT
   method: 'GET',
   path: '/{param*}',
   handler: {

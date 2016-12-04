@@ -7,26 +7,26 @@
         class='pipes-carousel-image'
         src='/assets/pipes/{opts.identifier}/{itemIdx}.jpg'
         />
+      <div id='itemInfo' class='pipes-itemDescription hide'>
+        <div class='text'>
+          {opts.description}
+        </div>
+      </div>
     </div>
   </div>
   <script>
     this.itemIdx = 0;
     this.moveLeft = () => {
-      previousImage();
-      this.update();
+      if (this.itemIdx > 0) {
+        this.itemIdx--;
+        this.update();
+      }
     };
     this.moveRight = () => {
-      nextImage();
-      this.update();
-
-    };
-    const nextImage = () => {
-      if (this.itemIdx < opts.numimages-1) { this.itemIdx++; }
-      return;
-    };
-    const previousImage = () => {
-      if (this.itemIdx > 0) { this.itemIdx--; }
-      return;
+      if (this.itemIdx < opts.numimages-1) {
+        this.itemIdx++;
+        this.update();
+      }
     };
   </script>
 </itemCarousel>
