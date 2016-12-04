@@ -14,35 +14,17 @@
   </div>
   <script>
     this.itemIdx = 0;
-    this.getNumImages = () => {
-      const xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = () => {
-        if (xhr.status === 200 && xhr.readyState === 4) {
-          const numImages = Number(xhr.responseText);
-          if (!isNaN(numImages)) {
-            this.numImages = numImages;
-          }
-        }
-      }
-      xhr.open('GET', '/items?id=' + opts.identifier + '&param=numImages', true);
-      xhr.send();
-    };
     this.moveLeft = () => {
-      previousImage();
-      this.update();
+      if (this.itemIdx > 0) {
+        this.itemIdx--;
+        this.update();
+      }
     };
     this.moveRight = () => {
-      // nextImage();
-      // this.update();
-
-    };
-    const nextImage = () => {
-      if (this.itemIdx < opts.numimages-1) { this.itemIdx++; }
-      return;
-    };
-    const previousImage = () => {
-      if (this.itemIdx > 0) { this.itemIdx--; }
-      return;
+      if (this.itemIdx < opts.numimages-1) {
+        this.itemIdx++;
+        this.update();
+      }
     };
   </script>
 </itemCarousel>

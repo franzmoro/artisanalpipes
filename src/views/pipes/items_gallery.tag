@@ -7,8 +7,10 @@
       technical={item.technical}
       price={item.price}
       priceunit={item.priceunit}
+      numimages={item.numImages}
     ></itemContainer>
   </div>
   <script>
+
   </script>
 </itemsGallery>
