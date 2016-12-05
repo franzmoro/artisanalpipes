@@ -1,5 +1,9 @@
 @import '../variables.scss';
 
+.pipes {
+  margin: $header-height;
+}
+
 .pipes-itemContainer {
   width: $item-containerWidth;
   margin: 0.25em $item-containerMarginHorizontal;
@@ -37,9 +41,9 @@
 
 .pipes-carousel-image {
   display: block;
-  margin: auto;
   max-height: $item-containerHeight-desktop;
   max-width: 100%;
+  margin: auto;
 }
 
 .pipes-itemDescription {

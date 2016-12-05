@@ -1,3 +1,3 @@
 <contact>
-  <header selected={'CONTACT'}></header>
+  <header selected={'/contact'}></header>
 </contact>

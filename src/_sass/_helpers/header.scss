@@ -1,37 +1,59 @@
 @import '../variables.scss';
 
 .app-header {
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
   list-style-type: none;
-  padding: 0.5em 0;
   width: 100%;
-  height: $header-height;
   background: linear-gradient(0deg,
     $header-startingColor,
     $header-endingColor
   );
-  text-align: center;
   font-family: $header-font, 'cursive';
+  height: $header-height;
 
-  .header-logo {
-    max-height: $header-height;
+  @media (max-width: $mobile) {
+    height: $header-height / 2;
   }
 
   .app-header-item {
+    vertical-align: top;
     display: inline-block;
-    max-width: 100% / $num-header-items;
+    height: $header-height;
+    width: 100% / $num-header-items;
     text-align: center;
 
-    .app-header-link {
+    a {
       text-decoration: none;
-      font-size: $header-fontSize;
+      font-size: 2em;
+      line-height: 2em;
       color: $header-textColor;
-      height: $header-height;
+
+      @media (max-width: $mobile) {
+        font-size: 1em;
+      }
     }
-    .app-header-link.selected {
+    a.selected {
       color: $header-selectedColor;
     }
   }
-  .header-text {
-    width: 100% / $num-header-items;
+  .header-img {
+    display: block;
+    height: 100%;
+    @media (max-width: $mobile) {
+      height: 50%;
+    }
+  }
+  .AP-logo {
+    background: url('/assets/logos/AP_12.png') center center no-repeat;
+    background-size: 100% 80%;
+
+  }
+  .checkout {
+    background: url('/assets/shopping_cart.png') center center no-repeat;
+    background-size: 20% 60%;
   }
 }
