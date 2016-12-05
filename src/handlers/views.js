@@ -10,9 +10,15 @@ module.exports = {
   contact: (req, reply) => {
     reply.view('contact/index');
   },
-  pipes: (req, reply) => {
-    reply.view('pipes/index', {
-      items: []//require('../../pipes.json')
+  pipes: o => (req, reply) => {
+    o.redis.get('items', (err, response) => {
+      if (err) {
+        console.error(err);
+        reply('There was an error').code(500);
+      } else {
+        const items = JSON.parse(response);
+        reply.view('pipes/index', { items });
+      }
     });
   }
 };

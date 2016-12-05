@@ -45,3 +45,6 @@ public/css
 
 # sass
 .sass-cache
+
+# redis
+dump.rdb
