@@ -9,6 +9,7 @@ const config = {
     TODO https */
   },
   redis: {
+    REDIS_URL: process.env.REDIS_URL,
     REDIS_HOST: process.env.REDIS_HOST,
     REDIS_PORT: process.env.REDIS_PORT,
     REDIS_DB: process.env.REDIS_DB
