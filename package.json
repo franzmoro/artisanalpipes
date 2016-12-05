@@ -29,8 +29,9 @@
     "env2": "^2.1.1",
     "hapi": "^15.2.0",
     "hapi-riot": "^2.1.0",
-    "riot": "^3.0.1",
     "inert": "^4.0.3",
+    "redis": "^2.6.3",
+    "riot": "^3.0.1",
     "vision": "^4.1.1"
   },
   "devDependencies": {
