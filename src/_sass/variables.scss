@@ -11,6 +11,7 @@ $item-containerMarginHorizontal: 0.25%;
 $item-containerWidth: (100% / $numItemsPerWidth) - (
   $item-containerMarginHorizontal * $numItemsPerWidth * 2
 );
+$item-containerHeight-tablet: 22vh;
 $item-containerHeight-mobile: 30vh;
 $item-containerHeight-desktop: 50vh;
 // COLORS

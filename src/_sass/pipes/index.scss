@@ -22,6 +22,9 @@
   background: rgba(216, 218, 218, 0.1);
   position: relative;
   @media (max-width: $tablet) {
+    height: $item-containerHeight-tablet;
+  }
+  @media (max-width: $mobile) {
     height: $item-containerHeight-mobile;
   }
 }
@@ -53,6 +56,9 @@
   max-width: 100%;
   margin: auto;
 
+  @media (max-width: $tablet) {
+    max-height: $item-containerHeight-tablet;
+  }
   @media (max-width: $mobile) {
     max-width: 80%;
     max-height: $item-containerHeight-mobile;
@@ -71,6 +77,9 @@
   background-color: grey;
   opacity: 0.7;
   z-index: 2;
+  @media (max-width: $tablet) {
+    height: $item-containerHeight-tablet;
+  }
   @media (max-width: $mobile) {
     height: $item-containerHeight-mobile;
   }
