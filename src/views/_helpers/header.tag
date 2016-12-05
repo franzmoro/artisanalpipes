@@ -1,37 +1,27 @@
 <header>
   <ul class='app-header'>
-    <img
-      src='/assets/logos/AP_logo_3_small.png'
-      alt='Artisanal Pipes' class='app-header-item header-logo'
-      />
-    <li class='app-header-item header-text' each='{item in items}'>
-      <a
-        href='{item.link}'
-        class='{app-header-link: !item.image}  {selected:item.isSelected}'
-        >
-        {item.title}
-        <img class='app-header-item-image header-logo'
-          src='{item.image.src}'
-          alt='{item.image.alt}'
-          />
-      </a>
+    <li class='app-header-item' each='{item in items}'>
+      <div class='{item.class}'>
+        <a href='{item.link}' class='{selected:item.isSelected} {fill:item.fill}'>
+          {item.title}
+        </a>
+      </div>
     </li>
   </ul>
   <script>
-    const isSelected = title => (title === opts.selected);
+    const isSelected = route => (route === opts.selected);
     this.items = [
-      { title: 'PIPES' },
-      { title: 'ABOUT' },
-      { title: 'CONTACT' },
-      {
-        title: 'CHECKOUT',
-        image: { src: '/assets/shopping_cart.png', alt: 'checkout' }
-      }
+      { title: '', route: '', class: 'header-img AP-logo' },
+      { title: 'PIPES', route: '/pipes' },
+      { title: 'ABOUT', route: '/about' },
+      { title: 'CONTACT', route: '/contact' },
+      { title: '', route: '/checkout', class: 'header-img checkout', fill: true }
     ].map(item => ({
-      title: item.image ? '' : item.title,
-      link: isSelected(item.title) ? '' : '/' + item.title.toLowerCase(),
-      isSelected: isSelected(item.title),
-      image: item.image
+      title: item.title,
+      link: item.route,
+      isSelected: isSelected(item.route),
+      class: item.class || '',
+      fill: item.fill
     }));
   </script>
 </header>
