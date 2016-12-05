@@ -137,7 +137,7 @@
 }
 .pipes-price {
   display: inline-block;
-  width: 40%;
+  width: 33%;
   font-size: 1.5em;
   @media (max-width: $tablet) {
     font-size: 1.2em;
@@ -158,6 +158,11 @@
 }
 .addToBasket {
   background: url('/assets/icons/shopping_cart.png') center center no-repeat;
+  background-size: contain;
+  height: 100%;
+}
+.inBasket {
+  background: url('/assets/icons/checkmark.png') center center no-repeat;
   background-size: contain;
   height: 100%;
 }
