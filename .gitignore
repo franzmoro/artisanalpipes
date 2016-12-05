@@ -36,9 +36,9 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-# some public files
-public/bundle.js
-public/css
+# public files
+# public/bundle.js
+# public/css
 
 # config
 .env
