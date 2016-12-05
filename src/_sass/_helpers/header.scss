@@ -34,6 +34,7 @@
 
       @media (max-width: $mobile) {
         font-size: 1em;
+        vertical-align: middle;
       }
     }
     a.selected {
@@ -58,7 +59,7 @@
     background-size: 95% 80%;
     @media (max-width: $mobile) {
       background: url('/assets/logos/AP_1_cut.png') center center no-repeat;
-      background-size: 80% 80%;
+      background-size: 70% 80%;
     }
   }
   .checkout {

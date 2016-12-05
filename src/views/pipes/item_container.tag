@@ -1,14 +1,19 @@
 <itemContainer>
   <div class='pipes-itemContainer'>
-    <div class='pipes-titleDetailsContainer'>
-      <span class='pipes-itemTitle'>
-        {opts.name}
-      </span>
-      <span class='pipes-itemDetails'>
-        <span class='actionIcon addToBasket pointer' onclick='{addToBasket}' />
-        <span class='actionIcon showInfo pointer' onclick='{toggleInfo}' />
-        {opts.priceunit} {opts.price.toLocaleString()}
-      </span>
+    <div class='pipes-titleDetails'>
+      <div class='pipes-titleDetailsContainer'>
+        <span class='pipes-itemTitle'>
+          {opts.name}
+        </span>
+        <span class='pipes-itemDetails'>
+          <span class='actionIcon addToBasket pointer' onclick='{addToBasket}' />
+          <span class='actionIcon showInfo pointer' onclick='{toggleInfo}' />
+          <span class='pipes-price'>
+            <span class='unit'>{opts.priceunit}</span>
+            <span class='quantity'> {opts.price.toLocaleString()}</span>
+          </span>
+        </span>
+      </div>
     </div>
     <itemCarousel
       name='carousel'
