@@ -1,18 +1,19 @@
 @import '_fonts.scss';
+// SCREEN SIZES
+$mobile: 430px;
+$tablet: 780px;
 // SIZES
 $num-header-items: 5;
 $header-height: 3.5em;
-$header-fontSize: $header-height * 0.67;
+
 $numItemsPerWidth: 2;
 $item-containerMarginHorizontal: 0.25%;
 $item-containerWidth: (100% / $numItemsPerWidth) - (
   $item-containerMarginHorizontal * $numItemsPerWidth * 2
 );
-$item-containerHeight-mobile: 20vh;
+$item-containerHeight-tablet: 22vh;
+$item-containerHeight-mobile: 30vh;
 $item-containerHeight-desktop: 50vh;
-// SCREEN SIZES
-$mobile: 430px;
-$tablet: 700px;
 // COLORS
 $main-theme-color: #984927;
 $dark-brown: #57231C;

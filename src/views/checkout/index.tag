@@ -1,3 +1,3 @@
 <home>
-  <header selected={'CHECKOUT'}></header>
+  <header selected={'/checkout'}></header>
 </home>

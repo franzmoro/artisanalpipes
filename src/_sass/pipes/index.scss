@@ -1,9 +1,18 @@
 @import '../variables.scss';
 
+.pipes {
+  margin: $header-height 0 $header-height $item-containerMarginHorizontal * 2;
+  width: 100% - $item-containerMarginHorizontal;
+}
+
 .pipes-itemContainer {
   width: $item-containerWidth;
   margin: 0.25em $item-containerMarginHorizontal;
   display: inline-block;
+
+  @media (max-width: $mobile) {
+    width: $item-containerWidth * $numItemsPerWidth;
+  }
 }
 
 .pipes-carousel {
@@ -12,6 +21,12 @@
   background-color: $header-endingColor;
   background: rgba(216, 218, 218, 0.1);
   position: relative;
+  @media (max-width: $tablet) {
+    height: $item-containerHeight-tablet;
+  }
+  @media (max-width: $mobile) {
+    height: $item-containerHeight-mobile;
+  }
 }
 
 .pipes-carousel-arrowRight, .pipes-carousel-arrowLeft {
@@ -37,9 +52,20 @@
 
 .pipes-carousel-image {
   display: block;
-  margin: auto;
   max-height: $item-containerHeight-desktop;
   max-width: 100%;
+  margin: auto;
+
+  @media (max-width: $tablet) {
+    max-height: $item-containerHeight-tablet;
+  }
+  @media (max-width: $mobile) {
+    max-width: 80%;
+    max-height: $item-containerHeight-mobile;
+  }
+}
+.pipes-titleDetails {
+  margin-bottom: 0.5em;
 }
 
 .pipes-itemDescription {
@@ -51,8 +77,14 @@
   background-color: grey;
   opacity: 0.7;
   z-index: 2;
+  @media (max-width: $tablet) {
+    height: $item-containerHeight-tablet;
+  }
+  @media (max-width: $mobile) {
+    height: $item-containerHeight-mobile;
+  }
   .text {
-    width: 50%;
+    width: 40%;
     margin: auto;
   }
 }
@@ -60,36 +92,77 @@
 .pipes-itemTitle, .pipes-itemDetails {
   height: 2em;
   line-height: 2.5em;
-  width: 49%;
   font-family: cursive;
   color: $item-titleColor;
   display: inline-block;
 }
 
 .pipes-itemTitle {
+  width: 40%;
   font-family: $title-font;
   font-size: 2em;
   text-indent: 0.5em;
+  @media (max-width: $tablet) {
+    width: 45%;
+    font-size: 1.5em;
+  }
+  @media (max-width: $mobile) {
+    font-size: 1.5em;
+    text-indent: 0.25em;
+  }
 }
 
 .pipes-itemDetails {
-  font-size: 1.5em;
+  width: 58%;
   text-align: right;
+  display: inline-block;
+  vertical-align: bottom;
+  @media (max-width: $tablet) {
+    width: 52%;
+  }
 }
 
 .actionIcon {
   display: inline-block;
+  vertical-align: top;
   width: 12%;
   margin-right: 0.5em;
+  @media (max-width: $tablet) {
+    width: 16%;
+  }
+  @media (max-width: $mobile) {
+    width: 12%;
+  }
+
+}
+.pipes-price {
+  display: inline-block;
+  width: 40%;
+  font-size: 1.5em;
+  @media (max-width: $tablet) {
+    font-size: 1.2em;
+    width: 48%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 0.75em;
+    width: 35%;
+  }
+  .unit {
+    display: inline-block;
+    float: left;
+  }
+  .quantity {
+    display: inline-block;
+    float: right;
+  }
 }
 .addToBasket {
-  background: url('/assets/shopping_cart.png') no-repeat;
+  background: url('/assets/shopping_cart.png') center center no-repeat;
   background-size: contain;
-  vertical-align: middle;
   height: 100%;
 }
 .showInfo {
-  background: url('/assets/document.png') no-repeat;
+  background: url('/assets/document.png') center center no-repeat;
   background-size: contain;
-  height: 75%;
+  height: 100%;
 }
