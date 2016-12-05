@@ -15,7 +15,7 @@ const config = {
   }
 };
 const o = require('../src/server.js')(config);
-
+o.redisClient.flushdb();
 // SERVER CONFIG
 require('./server.test.js')(o);
 // ROUTES
