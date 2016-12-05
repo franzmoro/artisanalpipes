@@ -37,7 +37,6 @@
       const quantity = basket[itemId] || 0;
 
       if (quantity === 0) {
-        console.log('not in basket, setting to 1');
         basket[itemId] = 1;
         localStorage.setItem('basket', JSON.stringify(basket));
       } else {
