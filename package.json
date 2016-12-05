@@ -4,7 +4,8 @@
   "description": "E-commerce website for [artisanalpipes](www.artisanalpipes.com).",
   "main": "index.js",
   "scripts": {
-    "start": "npm run compile:all && node src/index.js",
+    "start": "node src/index.js",
+    "start:bundle": "npm run compile:all && node src/index.js",
     "start:w": "parallelshell 'npm run compile:all:w' 'nodemon src/index.js'",
     "test": "npm run compile:all && node test/index.test.js",
     "compile:riot": "riot src/views public/bundle.js",
