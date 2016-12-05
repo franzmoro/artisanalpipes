@@ -27,6 +27,9 @@ body {
 .hide {
   display: none;
 }
+span.hide {
+  display: none;
+}
 p, .text {
   font-family: $text-font;
   font-size: 1em;
