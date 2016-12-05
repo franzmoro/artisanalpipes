@@ -32,7 +32,17 @@
       this.update();
     };
     this.addToBasket = () => {
-      console.log('added to basket');
+      const itemId = opts.identifier;
+      const basket = JSON.parse(localStorage.getItem('basket') || '{}');
+      const quantity = basket[itemId] || 0;
+
+      if (quantity === 0) {
+        console.log('not in basket, setting to 1');
+        basket[itemId] = 1;
+        localStorage.setItem('basket', JSON.stringify(basket));
+      } else {
+        window.alert('Sorry, we only have 1 unit for this item');
+      }
     };
   </script>
 </itemContainer>
