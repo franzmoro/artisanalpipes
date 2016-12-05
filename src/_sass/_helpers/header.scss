@@ -16,13 +16,13 @@
   height: $header-height;
 
   @media (max-width: $mobile) {
-    height: $header-height / 2;
+    height: $header-height * (2/3);
   }
 
   .app-header-item {
     vertical-align: top;
     display: inline-block;
-    height: $header-height;
+    height: inherit;
     width: 100% / $num-header-items;
     text-align: center;
 
@@ -39,18 +39,23 @@
     a.selected {
       color: $header-selectedColor;
     }
+    a.fill {
+      display: block;
+      width: 20%;
+      height: 100%;
+      margin: auto;
+    }
   }
   .header-img {
     display: block;
     height: 100%;
     @media (max-width: $mobile) {
-      height: 50%;
+      height: 80%;
     }
   }
   .AP-logo {
     background: url('/assets/logos/AP_12.png') center center no-repeat;
     background-size: 100% 80%;
-
   }
   .checkout {
     background: url('/assets/shopping_cart.png') center center no-repeat;
