@@ -3,6 +3,8 @@ node_js:
   - "6"
 env:
   - CXX=g++-4.8
+services:
+  - redis-server
 addons:
   apt:
     sources:
