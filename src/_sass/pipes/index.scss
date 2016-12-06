@@ -1,5 +1,3 @@
-@import '../variables.scss';
-
 .pipes {
   margin: $header-height 0 $header-height $item-containerMarginHorizontal * 2;
   width: 100% - $item-containerMarginHorizontal;
@@ -147,14 +145,14 @@
     font-size: 0.75em;
     width: 35%;
   }
-  .unit {
-    display: inline-block;
-    float: left;
-  }
-  .quantity {
-    display: inline-block;
-    float: right;
-  }
+}
+.unit {
+  display: inline-block;
+  float: left;
+}
+.quantity {
+  display: inline-block;
+  float: right;
 }
 .addToBasket {
   background: url('/assets/icons/shopping_cart.png') center center no-repeat;
