@@ -30,40 +30,48 @@
     </itemCarousel>
   </div>
   <script>
-    this.basket = {};
-    this.isInBasket = false;
-    if (typeof Storage !== 'undefined') {
-      this.basket = JSON.parse(localStorage.getItem('basket') || '{}');
-      const quantity = this.basket[opts.identifier] || 0;
-      this.isInBasket = (quantity > 0);
-    }
+    this.getBasket = () => JSON.parse(localStorage.getItem('basket') || '{}');
+    this.getQuantity = id => this.getBasket()[id] || 0;
+    this.updateBasket = newBasket =>
+      localStorage.setItem('basket', JSON.stringify(newBasket));
+    this.getBasketInfo = () => ({
+      basket: this.getBasket(),
+      quantity: this.getQuantity(opts.identifier)
+    });
+
     this.toggleInfo = () => {
       this.carousel.querySelector('#itemInfo').classList.toggle('hide');
       this.update();
     };
-    this.addToBasket = () => {
-      const quantity = this.basket[opts.identifier] || 0;
+    const basketAction = (action, quantityToCheck, movingInBasket) => {
+      const basketInfo = this.getBasketInfo();
+      const basket = basketInfo.basket;
+      const quantity = basketInfo.quantity;
 
-      if (quantity === 0) {
-        this.basket[opts.identifier] = 1;
-        localStorage.setItem('basket', JSON.stringify(this.basket));
-        this.isInBasket = true;
-        this.update();
+      if (quantity === quantityToCheck) {
+        action(basket);
+        this.updateBasket(basket);
+        this.isInBasket = movingInBasket;
+        this.update()
       } else {
-        window.alert('Sorry, we only have 1 unit for this item');
+        const oper = movingInBasket ? 'add item to' : 'remove item from'
+        throw new Error(`should not have been possible to ${oper} basket`);
       }
     };
-    this.removeFromBasket = () => {
-      const quantity = this.basket[opts.identifier] || 0;
-
-      if (quantity === 1) {
-        delete this.basket[opts.identifier];
-        localStorage.setItem('basket', JSON.stringify(this.basket));
-        this.isInBasket = false;
-        this.update();
-      } else {
-        throw new Error('should not have been possible to remove from Basket')
-      }
-    };
+    this.addToBasket = basketAction.bind(
+      this,
+      basket => basket[opts.identifier] = 1,
+      0,
+      true
+    );
+    this.removeFromBasket = basketAction.bind(
+      this,
+      basket => delete basket[opts.identifier],
+      1,
+      false
+    );
+    if (typeof Storage !== 'undefined') {
+      this.isInBasket = this.getBasketInfo().quantity > 0;
+    }
   </script>
 </itemContainer>
