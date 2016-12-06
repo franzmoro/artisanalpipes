@@ -30,13 +30,13 @@
     </itemCarousel>
   </div>
   <script>
-    this.getBasket = () => JSON.parse(localStorage.getItem('basket') || '{}');
-    this.getQuantity = id => this.getBasket()[id] || 0;
-    this.updateBasket = newBasket =>
+    const getBasket = () => JSON.parse(localStorage.getItem('basket') || '{}');
+    const getQuantity = id => getBasket()[id] || 0;
+    const updateBasket = newBasket =>
       localStorage.setItem('basket', JSON.stringify(newBasket));
-    this.getBasketInfo = () => ({
-      basket: this.getBasket(),
-      quantity: this.getQuantity(opts.identifier)
+    const getBasketInfo = () => ({
+      basket: getBasket(),
+      quantity: getQuantity(opts.identifier)
     });
 
     this.toggleInfo = () => {
@@ -44,13 +44,13 @@
       this.update();
     };
     const basketAction = (action, quantityToCheck, movingInBasket) => {
-      const basketInfo = this.getBasketInfo();
+      const basketInfo = getBasketInfo();
       const basket = basketInfo.basket;
       const quantity = basketInfo.quantity;
 
       if (quantity === quantityToCheck) {
         action(basket);
-        this.updateBasket(basket);
+        updateBasket(basket);
         this.isInBasket = movingInBasket;
         this.update()
       } else {
@@ -71,7 +71,7 @@
       false
     );
     if (typeof Storage !== 'undefined') {
-      this.isInBasket = this.getBasketInfo().quantity > 0;
+      this.isInBasket = getBasketInfo().quantity > 0;
     }
   </script>
 </itemContainer>
