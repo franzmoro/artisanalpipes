@@ -1,33 +1,23 @@
-<itemContainer>
-  <div class='pipes-itemContainer'>
-    <div class='pipes-titleDetails'>
-      <div class='pipes-titleDetailsContainer'>
-        <span class='pipes-itemTitle'>
-          {opts.name}
+<titleActions>
+  <div class='pipes-titleDetails'>
+    <div class='pipes-titleDetailsContainer'>
+      <span class='pipes-itemTitle'>
+        {opts.name}
+      </span>
+      <span class='pipes-itemDetails'>
+        <span class='actionIcon addToBasket {hide:isInBasket} pointer'
+          onclick='{addToBasket}'
+          />
+        <span class='actionIcon inBasket {hide:!isInBasket} pointer'
+          onclick='{removeFromBasket}'
+          />
+        <span class='actionIcon showInfo pointer' onclick='{toggleInfo}' />
+        <span class='pipes-price'>
+          <span class='unit'>{opts.priceunit}</span>
+          <span class='quantity'> {opts.price.toLocaleString()}</span>
         </span>
-        <span class='pipes-itemDetails'>
-          <span class='actionIcon addToBasket {hide:isInBasket} pointer'
-            onclick='{addToBasket}' />
-          <span class='actionIcon inBasket {hide:!isInBasket} pointer'
-            onclick='{removeFromBasket}' />
-          <span class='actionIcon showInfo pointer' onclick='{toggleInfo}' />
-          <span class='pipes-price'>
-            <span class='unit'>{opts.priceunit}</span>
-            <span class='quantity'> {opts.price.toLocaleString()}</span>
-          </span>
-        </span>
-      </div>
+      </span>
     </div>
-    <itemCarousel
-      name='carousel'
-      identifier={opts.identifier}
-      name={opts.name}
-      price={opts.price}
-      unit={opts.unit}
-      description={opts.description}
-      numimages={opts.numimages}
-      >
-    </itemCarousel>
   </div>
   <script>
     const getBasket = () => JSON.parse(localStorage.getItem('basket') || '{}');
@@ -74,4 +64,4 @@
       this.isInBasket = getBasketInfo().quantity > 0;
     }
   </script>
-</itemContainer>
+</titleActions>

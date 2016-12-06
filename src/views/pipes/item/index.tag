@@ -1,0 +1,21 @@
+<itemContainer>
+  <div class='pipes-itemContainer'>
+    <titleActions
+      identifier={opts.identifier}
+      name={opts.name}
+      price={opts.price}
+      priceunit={opts.priceunit}
+      >
+    </titleActions>
+    <itemCarousel
+      name='carousel'
+      identifier={opts.identifier}
+      name={opts.name}
+      price={opts.price}
+      unit={opts.unit}
+      description={opts.description}
+      numimages={opts.numimages}
+      >
+    </itemCarousel>
+  </div>
+</itemContainer>
