@@ -1,7 +1,7 @@
 <checkout>
   <header selected={'/checkout'}></header>
   <div class='header-separator'></div>
-  <h1>Your Basket</h1>
+  <h1>YOUR BASKET</h1>
   <ul class='checkout-items'>
     <li each='{item in basket}'
       >
