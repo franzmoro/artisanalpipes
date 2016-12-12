@@ -8,16 +8,26 @@ html, body, img, div, li, ul, a, p {
 body {
   background: linear-gradient(90deg,
     $light-brown,
-    $dark-brown 10%,
+    $dark-brown 5%,
+    $light-brown 10%,
+    $dark-brown 15%,
     $light-brown 20%,
-    $dark-brown 30%,
+    $dark-brown 25%,
+    $light-brown 30%,
+    $dark-brown 35%,
     $light-brown 40%,
-    $dark-brown 50%,
-    $dark-brown 60%,
+    $dark-brown 45%,
+    $light-brown 50%,
+    $dark-brown 55%,
+    $light-brown 60%,
+    $dark-brown 65%,
     $light-brown 70%,
-    $dark-brown 80%,
+    $dark-brown 75%,
+    $light-brown 80%,
+    $dark-brown 85%,
     $light-brown 90%,
-    $dark-brown 100%
+    $dark-brown 95%,
+    $light-brown 100%
   );
 }
 span.hide {
