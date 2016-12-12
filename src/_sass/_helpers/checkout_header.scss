@@ -1,0 +1,16 @@
+.checkoutHeader {
+  position: fixed;
+  margin-top: $header-height;
+  height: $header-height / 2;
+  width: 100%;
+}
+.checkoutHeader-item {
+  display: inline-block;
+  width: 25%;
+  margin: auto;
+}
+.checkoutHeader-item-link {
+  display: block;
+  text-align: center;
+  width: 100%;
+}

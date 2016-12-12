@@ -5,10 +5,13 @@ module.exports = {
     reply.view('about/index');
   },
   checkout: (req, reply) => {
-    reply.view('checkout/index');
+    reply.view('checkout/index', { stage: 0 });
   },
   contact: (req, reply) => {
     reply.view('contact/index');
+  },
+  details: (req, reply) => {
+    reply.view('details/index', { stage: 1 });
   },
   pipes: o => (req, reply) => {
     o.redis.get('items', (err, response) => {

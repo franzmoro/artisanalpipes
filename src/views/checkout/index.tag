@@ -1,5 +1,6 @@
 <checkout>
   <header selected={'/checkout'}></header>
+  <checkoutSubHeader stage={opts.stage}></checkoutSubHeader>
   <div class='header-separator'></div>
   <h1>YOUR BASKET</h1>
   <ul class='checkout-items'>

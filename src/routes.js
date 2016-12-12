@@ -24,6 +24,10 @@ module.exports = o => {
     handler: handlers.views.checkout
   }, {
     method: 'GET',
+    path: '/details',
+    handler: handlers.views.details
+  }, {
+    method: 'GET',
     path: '/contact',
     handler: handlers.views.contact
   }, {
