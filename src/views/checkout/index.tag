@@ -5,23 +5,17 @@
   <ul class='checkout-items'>
     <li each='{item in basket}'
       >
-      <itemRecap
-        identifier='{item.id}'
-        quantity='{item.quantity}'
-        getBasket='{getBasket}'
-        updateBasket='{updateBasket}'
-        >
-      </itemRecap>
+      <itemRecap identifier='{item.id}' info={item.info}></itemRecap>
     </li>
   </ul>
   <script>
     const formatBasket = rawBasket => Object.keys(rawBasket).reduce(
-      (accum, id) => accum.concat([{ id, quantity: rawBasket[id] }]),
+      (accum, id) => accum.concat([
+        { id, info: rawBasket[id] }
+      ]),
       []
     );
     this.getBasket = () => JSON.parse(localStorage.getItem('basket') || '{}');
-    this.updateBasket = newBasket =>
-      localStorage.setItem('basket', JSON.stringify(newBasket));
 
     if (typeof Storage !== 'undefined') {
       this.basket = formatBasket(this.getBasket());

@@ -1,6 +1,7 @@
 <itemContainer>
   <div class='pipes-itemContainer'>
     <titleActions
+      data={opts.data}
       identifier={opts.identifier}
       name={opts.name}
       price={opts.price}

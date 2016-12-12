@@ -20,48 +20,32 @@
     </div>
   </div>
   <script>
-    const getBasket = () => JSON.parse(localStorage.getItem('basket') || '{}');
-    const getQuantity = id => getBasket()[id] || 0;
-    const updateBasket = newBasket =>
-      localStorage.setItem('basket', JSON.stringify(newBasket));
-    const getBasketInfo = () => ({
-      basket: getBasket(),
-      quantity: getQuantity(opts.identifier)
-    });
-
     this.toggleInfo = () => {
       this.carousel.querySelector('#itemInfo').classList.toggle('hide');
       this.update();
     };
-    const basketAction = (action, quantityToCheck, movingInBasket) => {
-      const basketInfo = getBasketInfo();
-      const basket = basketInfo.basket;
-      const quantity = basketInfo.quantity;
 
-      if (quantity === quantityToCheck) {
-        action(basket);
-        updateBasket(basket);
-        this.isInBasket = movingInBasket;
-        this.update()
+    const getBasket = () => JSON.parse(localStorage.getItem('basket') || '{}');
+    const isIn = id => Boolean(getBasket()[id]);
+    const basketAction = (alreadyIn) => {
+      const basket = getBasket();
+      const isInBasket = isIn(opts.identifier);
+
+      if (!isInBasket) {
+        basket[opts.identifier] = opts.data;
+        this.isInBasket = true;
       } else {
-        const oper = movingInBasket ? 'add item to' : 'remove item from'
-        throw new Error(`should not have been possible to ${oper} basket`);
+        delete basket[opts.identifier];
+        this.isInBasket = false;
       }
+      localStorage.setItem('basket', JSON.stringify(basket));
+      this.update();
     };
-    this.addToBasket = basketAction.bind(
-      this,
-      basket => basket[opts.identifier] = 1,
-      0,
-      true
-    );
-    this.removeFromBasket = basketAction.bind(
-      this,
-      basket => delete basket[opts.identifier],
-      1,
-      false
-    );
+    this.addToBasket = basketAction.bind(this, false);
+    this.removeFromBasket = basketAction.bind(this, true);
+
     if (typeof Storage !== 'undefined') {
-      this.isInBasket = getBasketInfo().quantity > 0;
+      this.isInBasket = isIn(opts.identifier);
     }
   </script>
 </titleActions>

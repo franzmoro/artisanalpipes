@@ -1,6 +1,7 @@
 <itemsGallery>
   <div class='pipes'>
     <itemContainer each='{item in opts.items}'
+      data={JSON.stringify(item)}
       identifier={item.identifier}
       name={item.name}
       description={item.description}

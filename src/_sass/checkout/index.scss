@@ -8,6 +8,7 @@
 .checkout-itemRecap-container {
   margin: 1em 0;
   width: 100%;
+  height: 20vh;
 }
 
 .checkout-itemRecap-cell {
@@ -42,4 +43,12 @@
 }
 .itemRecap-unitPrice-price {
   @extend .quantity;
+}
+.checkout-itemRecap-cell.remove {
+  background: url('/assets/icons/trash.png') center center no-repeat;
+  background-size: 30%;
+}
+
+.checkout-itemRecap-removedItem {
+  background: yellow;
 }
