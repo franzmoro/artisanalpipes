@@ -19,7 +19,6 @@
     />
   <countriesDropdown type={opts.type}></countriesDropdown>
   <script>
-    let selectedCountry;
     this.getAddressLines = () => [
       'address1',
       'address2',
