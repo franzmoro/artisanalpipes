@@ -57,6 +57,9 @@ input[type=text], select {
 }
 .header-separator {
   height: $header-height;
+  @media (max-width: $mobile) {
+    height: $header-height * (2/3);
+  }
 }
 .checkoutHeader-separator {
   height: $checkoutHeader-height;
