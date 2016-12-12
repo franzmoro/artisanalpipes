@@ -2,7 +2,7 @@
   <header selected={'/checkout'}></header>
   <div class='header-separator'></div>
   <checkoutSubHeader stage={opts.stage}></checkoutSubHeader>
-  <div class='header-separator'></div>
+  <div class='checkoutHeader-separator'></div>
   <h1>YOUR BASKET</h1>
   <ul class='checkout-items'>
     <li each='{item in basket}'
