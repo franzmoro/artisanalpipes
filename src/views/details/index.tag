@@ -1,8 +1,9 @@
-<shipmentDetails>
+<billingShipment>
   <header></header>
   <div class='header-separator'></div>
   <checkoutSubHeader stage={opts.stage}></checkoutSubHeader>
-  <h1>Billing Details</h1>
-  <billingDetails></billingDetails>
+  <div class='checkoutHeader-separator'></div>
+  <h1>Shipping Details</h1>
+  <shippingDetails></shippingDetails>
   <script></script>
-</shipmentDetails>
+</billingShipment>
