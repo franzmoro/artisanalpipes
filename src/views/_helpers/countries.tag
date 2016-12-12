@@ -1,11 +1,17 @@
 <countriesDropdown>
-  <select>
+  <select onChange='{selectCountry}'>
     <option disabled selected value>Country*</option>
-    <option each='{country in countries}' value={country.code}>
+    <option each='{country in countries}'
+      value={country.code}
+      >
       {country.name}
     </option>
   </select>
   <script>
+    this.selectCountry = e => {
+      opts.selected = e.target.value;
+      this.update();
+    };
     this.countries = [
       { code: "AF", name: "Afghanistan" },
     	{ code: "AX", name: "Åland Islands" },
