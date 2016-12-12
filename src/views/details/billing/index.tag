@@ -1,6 +1,6 @@
 <billingDetails>
   <div class='billingDetailsContainer'>
-    <form class='billing'>
+    <form class='details'>
       <input type='text'
         placeholder='Full name (as on card)*'
         />
