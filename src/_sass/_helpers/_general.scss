@@ -32,6 +32,9 @@ h1 {
   color: $header-endingColor;
   font-family: $title-font;
 }
+input[type=text], select {
+  width: 100%;
+}
 
 .pointer {
   cursor: pointer;
