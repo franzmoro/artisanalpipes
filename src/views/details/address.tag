@@ -20,9 +20,6 @@
   <countriesDropdown type={opts.type}></countriesDropdown>
   <script>
     let selectedCountry;
-    if (this.tags.countriesdropdown) {
-      console.log(this.tags.countriesdropdown.opts);
-    }
     this.getAddressLines = () => [
       'address1',
       'address2',
