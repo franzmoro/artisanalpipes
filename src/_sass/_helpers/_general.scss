@@ -20,13 +20,6 @@ body {
     $dark-brown 100%
   );
 }
-
-.pointer {
-  cursor: pointer;
-}
-.hide {
-  display: none;
-}
 span.hide {
   display: none;
 }
@@ -38,6 +31,13 @@ h1 {
   text-align: center;
   color: $header-endingColor;
   font-family: $title-font;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.hide {
+  display: none;
 }
 .header-separator {
   height: $header-height;
