@@ -29,18 +29,15 @@
       'city',
       'county'
     ].reduce((accum, el) => {
-      accum[el] = this[`${el}_${opts.type}`].value;
+      accum[el] = this[el].value;
       return accum;
     }, {});
-    this.getCountry = () => ({
-      country: this.tags.countriesdropdown.opts.selected
-    });
+
     this.getInputs = () => Object.assign(
       {},
       this.getAddressLines(),
-      this.getCountry()
+      { country: this.tags.countriesdropdown.country.value }
     );
-
     this.validateAddress = () => {
 
     };
