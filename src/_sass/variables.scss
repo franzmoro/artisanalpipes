@@ -5,7 +5,7 @@ $tablet: 780px;
 // SIZES
 $num-header-items: 5;
 $header-height: 3.5em;
-$checkoutHeader-height: $header-height;
+$checkoutHeader-height: $header-height * 2/3;
 
 $numItemsPerWidth: 2;
 $item-containerMarginHorizontal: 0.25%;

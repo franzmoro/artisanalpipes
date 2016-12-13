@@ -1,13 +1,20 @@
-.checkoutHeader {
+.checkoutHeaderContainer {
   position: fixed;
   height: $checkoutHeader-height;
   width: 100%;
   background: linear-gradient(0deg,
-    $checkoutHeader-startingColor,
-    $checkoutHeader-endingColor
+  $checkoutHeader-startingColor,
+  $checkoutHeader-endingColor
   );
   @media (max-width: $mobile) {
     height: $checkoutHeader-height /2;
+  }
+}
+.checkoutHeader {
+  width: 40%;
+  margin: auto;
+  @media (max-width: $mobile) {
+    width: 80%;
   }
 }
 .checkoutHeader-item {

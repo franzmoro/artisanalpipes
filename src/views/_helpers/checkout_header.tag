@@ -1,14 +1,16 @@
 <checkoutSubHeader>
-  <ul class='checkoutHeader'>
-    <li each='{link in links}' class='checkoutHeader-item'>
-      <a
-        href='{formatLink(link)}'
-        class='checkoutHeader-item-link {selected:link.selected} {active:link.active}'
-        >
-        {link.title}
-      </a>
-    </li>
-  </ul>
+  <div class='checkoutHeaderContainer'>
+    <ul class='checkoutHeader'>
+      <li each='{link in links}' class='checkoutHeader-item'>
+        <a
+          href='{formatLink(link)}'
+          class='checkoutHeader-item-link {selected:link.selected} {active:link.active}'
+          >
+          {link.title}
+        </a>
+      </li>
+    </ul>
+  </div>
   <script>
     this.formatLink = link => link.active ? link.url : ''
     this.links = [{
@@ -27,9 +29,9 @@
       active: opts.stage > 2,
       selected: opts.stage === 2
     },{
-      title: 'CONFIRM',
+      title: 'DONE',
       url: '',
-      active: opts.stage > 3,
+      active: false,
       selected: opts.stage === 3
     }];
   </script>
