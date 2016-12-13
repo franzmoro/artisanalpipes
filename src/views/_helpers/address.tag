@@ -26,6 +26,8 @@
       'address2',
       'address3',
       'address4',
+      'city',
+      'county'
     ].reduce((accum, el) => {
       accum[el] = this[`${el}_${opts.type}`].value;
       return accum;
