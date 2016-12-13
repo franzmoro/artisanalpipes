@@ -2,12 +2,12 @@
   <div class='billingDetailsContainer'>
     <form class='details'>
       <input type='checkbox' name='sameDetails' class='group'>
-        <label for='sameDetails'>Autocomplete with shipping details</label>
+        <label for='sameDetails'>Same as shipping details</label>
       <input type='text'
         placeholder='Full name (as on card)*'
         />
       <addressDetails type='billing'></addressDetails>
-      <div class='group'>
+      <div class='group cardDetails'>
         <select name='cardType'>
           <option disabled selected value>Card Type*</option>
           <option value='Visa'>Visa</option>

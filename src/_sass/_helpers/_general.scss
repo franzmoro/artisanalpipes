@@ -42,9 +42,18 @@ h1 {
   text-align: center;
   color: $header-endingColor;
   font-family: $title-font;
+  margin: 0.5em 0;
+
+  @media (max-width: $mobile) {
+    font-size: 1.5em;
+  }
 }
 input[type=text], select {
   width: 100%;
+  margin: 0.15em 0;
+  height: 2.5em;
+  background-color: $header-startingColor;
+  color: white;
 }
 a {
   text-decoration: none;
@@ -58,6 +67,9 @@ a {
 }
 .header-separator {
   height: $header-height;
+  @media (max-width: $mobile) {
+    height: $header-height * (2/3);
+  }
 }
 .header-separator {
   height: $header-height;
@@ -67,6 +79,9 @@ a {
 }
 .checkoutHeader-separator {
   height: $checkoutHeader-height;
+  @media (max-width: $mobile) {
+    height: $checkoutHeader-height / 2;
+  }
 }
 .proceed {
   float: right;
@@ -75,7 +90,14 @@ a {
   color: white;
   font-family: $title-font;
   font-size: 1.75em;
+  @media (max-width: $mobile) {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
 }
 .group {
-  margin: 1em 0;
+  margin: 0.5em 0;
+  @media (max-width: $mobile) {
+    margin: 0.35em 0;
+  }
 }

@@ -1,7 +1,13 @@
+label {
+  color: white;
+}
 .details {
   width: 40%;
   margin: auto;
+  @media (max-width: $mobile) {
+    width: 80%;
+  }
 }
-label {
-  color: white;
+.cardDetails {
+  width: 40%;
 }
