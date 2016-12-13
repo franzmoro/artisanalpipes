@@ -1,5 +1,7 @@
 <billingDetails>
   <div class='billingDetailsContainer'>
+    <input type='checkbox' name='sameDetails'>
+      <label for='sameDetails'>Autocomplete with shipping details</label>
     <form class='details'>
       <input type='text'
         placeholder='Full name (as on card)*'
