@@ -1,8 +1,8 @@
 <billingDetails>
   <div class='billingDetailsContainer'>
-    <input type='checkbox' name='sameDetails'>
-      <label for='sameDetails'>Autocomplete with shipping details</label>
     <form class='details'>
+      <input type='checkbox' name='sameDetails'>
+        <label for='sameDetails'>Autocomplete with shipping details</label>
       <input type='text'
         placeholder='Full name (as on card)*'
         />
@@ -24,6 +24,7 @@
         <option disabled selected value>Expiry (YYYY)*</option>
         <option each='{year in years}' value={year}>{year}</option>
       </select>
+      <button>Pay</button>
     </form>
   </div>
   <script>
