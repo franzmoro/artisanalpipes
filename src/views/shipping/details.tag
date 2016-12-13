@@ -8,11 +8,9 @@
     </form>
   </div>
   <script>
-  const autoFill = () => {
-    this.name.value = opts.saved.name;
-  };
-  if (opts.saved && opts.saved.name) {
+    const autoFill = () => {
+      this.name.value = opts.saved.name;
+    };
     autoFill();
-  };
   </script>
 </shippingDetails>

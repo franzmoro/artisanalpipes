@@ -4,6 +4,13 @@
   <checkoutSubHeader stage={opts.stage}></checkoutSubHeader>
   <div class='checkoutHeader-separator'></div>
   <h1>Billing Details</h1>
-  <billingDetails></billingDetails>
-  <script></script>
+  <billingDetails saved={opts.saved}></billingDetails>
+
+  <script>
+    if (typeof Storage !== 'undefined') {
+      opts.saved = JSON.parse(
+        sessionStorage.getItem('shipping') ||
+        '{"name":"","address":{}}');
+    }
+  </script>
 </billing>

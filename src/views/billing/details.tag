@@ -1,12 +1,17 @@
 <billingDetails>
   <div class='billingDetailsContainer'>
-    <form class='details'>
-      <input type='checkbox' name='sameDetails' class='group'>
+    <form class='details' action='/confirm'>
+      <input type='checkbox' id='samedetails'
+        name='sameDetails'
+        class='group'
+        checked={true}
+        onchange={conditionalAutoComplete}
+        >
         <label for='sameDetails'>Same as shipping details</label>
-      <input type='text'
+      <input type='text' id='billingname'
         placeholder='Full name (as on card)*'
         />
-      <addressDetails type='billing'></addressDetails>
+      <addressDetails type='billing' saved={opts.savedaddress}></addressDetails>
       <div class='group cardDetails'>
         <select name='cardType'>
           <option disabled selected value>Card Type*</option>
@@ -34,5 +39,18 @@
     this.months = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     this.years = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
       .map((el, idx) => currYear + idx);
+
+    const autoComplete = bool => {
+      this.billingname.value = bool ? opts.saved.name : '';
+      opts.savedaddress = bool ? opts.saved.address : {};
+      // this.tags.addressdetails.autoFill();
+    };
+    this.conditionalAutoComplete = (e) => {
+      console.log('e.target', e.target.checked);
+      autoComplete(e.target.checked);
+    };
+    if (opts.saved) {
+      autoComplete(true);
+    }
   </script>
 </billingDetails>

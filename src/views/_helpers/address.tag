@@ -41,18 +41,19 @@
     this.validateAddress = () => {
 
     };
-    const autoFill = () => {
+    this.autoFill = () => {
       Object.keys(opts.saved).forEach(field => {
         if (field === 'country') {
           opts.savedcountry = opts.saved.country;
-          this.tags.countriesdropdown.update();
+          // this.tags.countriesdropdown.update();
         } else {
           this[field].value = opts.saved[field];
         }
+        this.update();
       });
     };
     if (opts.saved && opts.saved) {
-      autoFill();
+      this.autoFill();
     }
   </script>
 </addressDetails>

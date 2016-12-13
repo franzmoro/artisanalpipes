@@ -24,7 +24,9 @@
       };
     };
     if (typeof Storage !== 'undefined') {
-      opts.saved = JSON.parse(sessionStorage.getItem('shipping') || '{}');
+      opts.saved = JSON.parse(
+        sessionStorage.getItem('shipping') ||
+        '{"name":"","address":{}}');
     }
   </script>
 </shipping>
