@@ -12,20 +12,28 @@ module.exports = o => {
     handler: handlers.views.pipes(o)
   }, {
     method: 'GET',
-    path: '/pipes',
-    handler: handlers.views.pipes(o)
-  }, {
-    method: 'GET',
     path: '/about',
     handler: handlers.views.about
+  }, {
+    method: 'GET',
+    path: '/contact',
+    handler: handlers.views.contact
+  }, {
+    method: 'GET',
+    path: '/pipes',
+    handler: handlers.views.pipes(o)
   }, {
     method: 'GET',
     path: '/checkout',
     handler: handlers.views.checkout
   }, {
     method: 'GET',
-    path: '/contact',
-    handler: handlers.views.contact
+    path: '/shipping',
+    handler: handlers.views.shipping
+  }, {
+    method: 'GET',
+    path: '/billing',
+    handler: handlers.views.billing
   }, {
     // STATIC CONTENT
     method: 'GET',

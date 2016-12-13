@@ -27,7 +27,6 @@
     text-align: center;
 
     a {
-      text-decoration: none;
       font-size: 2em;
       line-height: 2em;
       color: $header-textColor;
@@ -56,7 +55,7 @@
   }
   .AP-logo {
     background: url('/assets/logos/AP_1.png') center center no-repeat;
-    background-size: 95% 80%;
+    background-size: 95% 95%;
     @media (max-width: $mobile) {
       background: url('/assets/logos/AP_1_cut.png') center center no-repeat;
       background-size: 70% 80%;
