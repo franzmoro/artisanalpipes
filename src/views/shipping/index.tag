@@ -8,16 +8,20 @@
   <a href='/billing' onclick='{setShippingDetails}' class='proceed'>Proceed to Billing</a>
 
   <script>
-    this.setShippingDetails = details => sessionStorage.setItem(
-      'shipping',
-      JSON.stringify(getShippingInputs())
-    );
-    const shippingTag = this.tags.shippingdetails;
-    const addressInputsTag = shippingTag.tags.addressdetails;
-
-    const getShippingInputs = () => ({
-      name: shippingTag.name.value,
-      shippingAddress: addressInputsTag.getInputs()
-    });
+    this.setShippingDetails = () => {
+      sessionStorage.setItem(
+        'shipping',
+        JSON.stringify(getShippingInputs())
+      );
+      return true;
+    }
+    const getShippingInputs = () => {
+      const shippingTag = this.tags.shippingdetails;
+      const addressInputsTag = shippingTag.tags.addressdetails;
+      return {
+        name: shippingTag.name.value,
+        address: addressInputsTag.getInputs()
+      };
+    };
   </script>
 </shipping>

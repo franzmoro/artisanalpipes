@@ -8,5 +8,12 @@
     </form>
   </div>
   <script>
+  const autoFillName = () => {
+    const shippingDetails = JSON.parse(sessionStorage.getItem('shipping'));
+    this.name.value = shippingDetails.name;
+  };
+  if (typeof Storage !== 'undefined') {
+    autoFillName();
+  }
   </script>
 </shippingDetails>

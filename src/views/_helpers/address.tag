@@ -1,24 +1,24 @@
 <addressDetails>
   <div class='group'>
-    <input type='text' name='address1_{opts.type}' id='address1_{opts.type}'
+    <input type='text' name='address1_{opts.type}' id='address1'
       placeholder='Address (Line 1)*'
       />
-    <input type='text' name='address2_{opts.type}' id='address2_{opts.type}'
+    <input type='text' name='address2_{opts.type}' id='address2'
       placeholder='Address (Line 2)'
       />
-    <input type='text' name='address3_{opts.type}' id='address3_{opts.type}'
+    <input type='text' name='address3_{opts.type}' id='address3'
       placeholder='Address (Line 3)'
       />
-    <input type='text' name='address4_{opts.type}' id='address4_{opts.type}'
+    <input type='text' name='address4_{opts.type}' id='address4'
       placeholder='Address (Line 4)'
       />
-    <input type='text' name='city_{opts.type}' id='city_{opts.type}'
+    <input type='text' name='city_{opts.type}' id='city'
       placeholder='City*'
       />
-    <input type='text' name='county_{opts.type}' id='county_{opts.type}'
+    <input type='text' name='county_{opts.type}' id='county'
       placeholder='County'
       />
-    <countriesDropdown type={opts.type}></countriesDropdown>
+    <countriesDropdown type={opts.type} saved={opts.savedcountry}></countriesDropdown>
   </div>
   <script>
     this.getAddressLines = () => [
@@ -44,5 +44,20 @@
     this.validateAddress = () => {
 
     };
+    const autoFillFromStorage = () => {
+      const details = JSON.parse(sessionStorage.getItem(opts.type) || '{}');
+      const savedAddress = details.address;
+      Object.keys(savedAddress).forEach(field => {
+        if (field === 'country') {
+          opts.savedcountry = savedAddress.country;
+          this.tags.countriesdropdown.update();
+        } else {
+          this[field].value = savedAddress[field];
+        }
+      });
+    };
+    if (typeof Storage !== 'undefined') {
+      autoFillFromStorage();
+    }
   </script>
 </addressDetails>
