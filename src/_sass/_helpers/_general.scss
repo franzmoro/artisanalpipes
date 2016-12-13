@@ -6,7 +6,8 @@ html, body, img, div, li, ul, a, p {
 }
 
 body {
-  background: linear-gradient(90deg,
+  height: 100%;
+  background: linear-gradient(45deg,
     $light-brown,
     $dark-brown 5%,
     $light-brown 10%,
