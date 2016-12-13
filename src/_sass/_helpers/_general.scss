@@ -45,6 +45,9 @@ h1 {
 input[type=text], select {
   width: 100%;
 }
+a {
+  text-decoration: none;
+}
 
 .pointer {
   cursor: pointer;
@@ -63,4 +66,10 @@ input[type=text], select {
 }
 .checkoutHeader-separator {
   height: $checkoutHeader-height;
+}
+.proceed {
+  float: right;
+  margin-right: 10%;
+  color: white;
+  font-family: $title-font;
 }

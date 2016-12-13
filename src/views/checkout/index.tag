@@ -4,6 +4,7 @@
   <checkoutSubHeader stage={opts.stage}></checkoutSubHeader>
   <div class='checkoutHeader-separator'></div>
   <h1>YOUR BASKET</h1>
+  <a href='/details' class='proceed'>Proceed to Billing</a>
   <ul class='checkout-items'>
     <li each='{item in basket}'
       >
