@@ -1,17 +1,12 @@
+
 'use strict';
 
 module.exports = {
   about: (req, reply) => {
     reply.view('about/index');
   },
-  checkout: (req, reply) => {
-    reply.view('checkout/index', { stage: 0 });
-  },
   contact: (req, reply) => {
     reply.view('contact/index');
-  },
-  details: (req, reply) => {
-    reply.view('details/index', { stage: 1 });
   },
   pipes: o => (req, reply) => {
     o.redis.get('items', (err, response) => {
@@ -23,5 +18,14 @@ module.exports = {
         reply.view('pipes/index', { items });
       }
     });
+  },
+  checkout: (req, reply) => {
+    reply.view('checkout/index', { stage: 0 });
+  },
+  shipping: (req, reply) => {
+    reply.view('shipping/index', { stage: 1 });
+  },
+  billing: (req, reply) => {
+    reply.view('billing/index', { stage: 2 });
   }
 };

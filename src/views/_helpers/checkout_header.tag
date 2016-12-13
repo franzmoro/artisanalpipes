@@ -17,13 +17,13 @@
       active: opts.stage > 0,
       selected: opts.stage === 0
     },{
-      title: 'BILLING',
-      url: '/details?tab=billing',
+      title: 'SHIPMENT',
+      url: '/details?tab=shipment',
       active: opts.stage > 1,
       selected: opts.stage === 1
     },{
-      title: 'SHIPMENT',
-      url: '/details?tab=shipment',
+      title: 'BILLING',
+      url: '/details?tab=billing',
       active: opts.stage > 2,
       selected: opts.stage === 2
     },{

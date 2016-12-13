@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = o => {
+
   test('routes:STATIC-CONTENT (bundle.js)', t => {
     const req = {
       method: 'GET',
@@ -20,7 +21,6 @@ module.exports = o => {
       t.end();
     });
   });
-
   test('routes:STATIC-CONTENT (style.css)', t => {
     const req = {
       method: 'GET',
@@ -37,58 +37,24 @@ module.exports = o => {
     });
   });
 
-  test('routes:VIEWS:INDEX', t => {
-    const req = {
-      method: 'GET',
-      url: '/'
-    };
-    o.server.inject(req, res => {
-      t.notEqual(res.statusCode, 404, 'route exists');
-      t.end();
-    });
-  });
-
-  test('routes:VIEWS:ABOUT', t => {
-    const req = {
-      method: 'GET',
-      url: '/about'
-    };
-    o.server.inject(req, res => {
-      t.notEqual(res.statusCode, 404, 'route exists');
-      t.end();
-    });
-  });
-
-  test('routes:VIEWS:CONTACT', t => {
-    const req = {
-      method: 'GET',
-      url: '/contact'
-    };
-    o.server.inject(req, res => {
-      t.notEqual(res.statusCode, 404, 'route exists');
-      t.end();
-    });
-  });
-
-  test('routes:VIEWS:CHECKOUT', t => {
-    const req = {
-      method: 'GET',
-      url: '/checkout'
-    };
-    o.server.inject(req, res => {
-      t.notEqual(res.statusCode, 404, 'route exists');
-      t.end();
-    });
-  });
-
-  test('routes:VIEWS:PIPES', t => {
-    const req = {
-      method: 'GET',
-      url: '/pipes'
-    };
-    o.server.inject(req, res => {
-      t.notEqual(res.statusCode, 404, 'route exists');
-      t.end();
+  [
+    { title: 'INDEX', method: 'GET', path: '/'},
+    { title: 'about', method: 'GET', path: '/about'},
+    { title: 'contact', method: 'GET', path: '/contact'},
+    { title: 'pipes', method: 'GET', path: '/pipes'},
+    { title: 'checkout', method: 'GET', path: '/checkout'},
+    { title: 'shipping', method: 'GET', path: '/shipping'},
+    { title: 'billing', method: 'GET', path: '/billing'}
+  ].map(route => {
+    test(`routes:VIEWS:${route.title}`, t => {
+      const req = {
+        method: route.method,
+        url: route.path
+      };
+      o.server.inject(req, res => {
+        t.notEqual(res.statusCode, 404, 'route exists');
+        t.end();
+      });
     });
   });
 };
