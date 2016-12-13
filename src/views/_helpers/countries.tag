@@ -11,10 +11,6 @@
   </select>
   <script>
     this.saved = opts.saved;
-    this.selectCountry = e => {
-      opts.selected = e.target.value;
-      this.update();
-    };
     this.countries = [
       { code: "AF", name: "Afghanistan" },
     	{ code: "AX", name: "Åland Islands" },

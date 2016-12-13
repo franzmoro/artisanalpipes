@@ -4,7 +4,7 @@
   <checkoutSubHeader stage={opts.stage}></checkoutSubHeader>
   <div class='checkoutHeader-separator'></div>
   <h1>Shipping Details</h1>
-  <shippingDetails></shippingDetails>
+  <shippingDetails saved={opts.saved}></shippingDetails>
   <a href='/billing' onclick='{setShippingDetails}' class='proceed'>Proceed to Billing</a>
 
   <script>
@@ -23,5 +23,8 @@
         address: addressInputsTag.getInputs()
       };
     };
+    if (typeof Storage !== 'undefined') {
+      opts.saved = JSON.parse(sessionStorage.getItem('shipping') || '{}');
+    }
   </script>
 </shipping>

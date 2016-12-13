@@ -4,16 +4,15 @@
       <input type='text' id='name'
         placeholder='Full name'
         />
-      <addressDetails type='shipping'></addressDetails>
+      <addressDetails type='shipping' saved={opts.saved.address}></addressDetails>
     </form>
   </div>
   <script>
-  const autoFillName = () => {
-    const shippingDetails = JSON.parse(sessionStorage.getItem('shipping'));
-    this.name.value = shippingDetails.name;
+  const autoFill = () => {
+    this.name.value = opts.saved.name;
   };
-  if (typeof Storage !== 'undefined') {
-    autoFillName();
-  }
+  if (opts.saved && opts.saved.name) {
+    autoFill();
+  };
   </script>
 </shippingDetails>

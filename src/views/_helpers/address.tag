@@ -44,20 +44,18 @@
     this.validateAddress = () => {
 
     };
-    const autoFillFromStorage = () => {
-      const details = JSON.parse(sessionStorage.getItem(opts.type) || '{}');
-      const savedAddress = details.address;
-      Object.keys(savedAddress).forEach(field => {
+    const autoFill = () => {
+      Object.keys(opts.saved).forEach(field => {
         if (field === 'country') {
-          opts.savedcountry = savedAddress.country;
+          opts.savedcountry = opts.saved.country;
           this.tags.countriesdropdown.update();
         } else {
-          this[field].value = savedAddress[field];
+          this[field].value = opts.saved[field];
         }
       });
     };
-    if (typeof Storage !== 'undefined') {
-      autoFillFromStorage();
+    if (opts.saved && opts.saved) {
+      autoFill();
     }
   </script>
 </addressDetails>
