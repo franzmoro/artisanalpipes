@@ -11,13 +11,8 @@ html, body, img, div, li, ul, a, p {
   margin: 0; }
 
 body {
-  background: linear-gradient(90deg, #9F4F1B, #57231C 10%, #9F4F1B 20%, #57231C 30%, #9F4F1B 40%, #57231C 50%, #57231C 60%, #9F4F1B 70%, #57231C 80%, #9F4F1B 90%, #57231C 100%); }
-
-.pointer {
-  cursor: pointer; }
-
-.hide {
-  display: none; }
+  height: 100%;
+  background: linear-gradient(45deg, #9F4F1B, #57231C 5%, #9F4F1B 10%, #57231C 15%, #9F4F1B 20%, #57231C 25%, #9F4F1B 30%, #57231C 35%, #9F4F1B 40%, #57231C 45%, #9F4F1B 50%, #57231C 55%, #9F4F1B 60%, #57231C 65%, #9F4F1B 70%, #57231C 75%, #9F4F1B 80%, #57231C 85%, #9F4F1B 90%, #57231C 95%, #9F4F1B 100%); }
 
 span.hide {
   display: none; }
@@ -25,6 +20,67 @@ span.hide {
 p, .text {
   font-family: "Kaushan";
   font-size: 1em; }
+
+h1 {
+  text-align: center;
+  color: #d8dada;
+  font-family: "Kaushan";
+  margin: 0.5em 0; }
+  @media (max-width: 430px) {
+    h1 {
+      font-size: 1.5em; } }
+
+input[type=text], select {
+  width: 100%;
+  margin: 0.15em 0;
+  height: 2.5em;
+  background-color: #585858;
+  color: white; }
+
+a {
+  text-decoration: none; }
+
+.pointer {
+  cursor: pointer; }
+
+.hide {
+  display: none; }
+
+.header-separator {
+  height: 3.5em; }
+  @media (max-width: 430px) {
+    .header-separator {
+      height: 2.33333em; } }
+
+.header-separator {
+  height: 3.5em; }
+  @media (max-width: 430px) {
+    .header-separator {
+      height: 2.33333em; } }
+
+.checkoutHeader-separator {
+  height: 2.33333em; }
+  @media (max-width: 430px) {
+    .checkoutHeader-separator {
+      height: 1.16667em; } }
+
+.proceed {
+  float: right;
+  margin-right: 10%;
+  margin-bottom: 2em;
+  color: white;
+  font-family: "Kaushan";
+  font-size: 1.75em; }
+  @media (max-width: 430px) {
+    .proceed {
+      font-size: 1em;
+      margin-bottom: 1em; } }
+
+.group {
+  margin: 0.5em 0; }
+  @media (max-width: 430px) {
+    .group {
+      margin: 0.35em 0; } }
 
 @font-face {
   font-family: Kaushan;
@@ -55,7 +111,6 @@ p, .text {
     width: 20%;
     text-align: center; }
     .app-header .app-header-item a {
-      text-decoration: none;
       font-size: 2em;
       line-height: 2em;
       color: #272727; }
@@ -78,7 +133,7 @@ p, .text {
         height: 80%; } }
   .app-header .AP-logo {
     background: url("/assets/logos/AP_1.png") center center no-repeat;
-    background-size: 95% 80%; }
+    background-size: 95% 95%; }
     @media (max-width: 430px) {
       .app-header .AP-logo {
         background: url("/assets/logos/AP_1_cut.png") center center no-repeat;
@@ -90,16 +145,50 @@ p, .text {
       .app-header .checkout {
         background-size: 30% 60%; } }
 
-@font-face {
-  font-family: Kaushan;
-  src: url("/fonts/KaushanScript-Regular.ttf"); }
+.checkoutHeaderContainer {
+  position: fixed;
+  height: 2.33333em;
+  width: 100%;
+  background: linear-gradient(0deg, #272727, #585858); }
+  @media (max-width: 430px) {
+    .checkoutHeaderContainer {
+      height: 1.16667em; } }
 
-@font-face {
-  font-family: Yellowtail;
-  src: url("/fonts/Yellowtail-Regular.ttf"); }
+.checkoutHeader {
+  width: 40%;
+  margin: auto; }
+  @media (max-width: 430px) {
+    .checkoutHeader {
+      width: 80%; } }
+
+.checkoutHeader-item {
+  display: inline-block;
+  width: 25%;
+  margin: auto; }
+
+.checkoutHeader-item-link {
+  display: block;
+  text-align: center;
+  line-height: 2.33333em;
+  width: 100%;
+  color: white;
+  font-family: "Kaushan"; }
+  @media (max-width: 430px) {
+    .checkoutHeader-item-link {
+      font-size: 0.75em;
+      line-height: 1.16667em; } }
+
+.checkoutHeader-item-link.selected, .checkoutHeader-item-link.active {
+  color: #9F4F1B; }
+
+.checkoutHeader-item-link.active {
+  opacity: 0.5; }
+
+.checkoutHeader-item-link.selected {
+  opacity: 1; }
 
 .pipes {
-  margin: 3.5em 0 3.5em 0.5%;
+  margin: 0 0 3.5em 0.5%;
   width: 99.75%; }
 
 .pipes-itemContainer {
@@ -112,7 +201,7 @@ p, .text {
 
 .pipes-carousel {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   background-color: #d8dada;
   background: rgba(216, 218, 218, 0.1);
   position: relative; }
@@ -145,7 +234,7 @@ p, .text {
 
 .pipes-carousel-image {
   display: block;
-  max-height: 50vh;
+  max-height: 60vh;
   max-width: 100%;
   margin: auto; }
   @media (max-width: 780px) {
@@ -164,7 +253,7 @@ p, .text {
   top: 0;
   width: 100%;
   margin: auto;
-  height: 50vh;
+  height: 60vh;
   background-color: grey;
   opacity: 0.7;
   z-index: 2; }
@@ -178,24 +267,24 @@ p, .text {
     width: 40%;
     margin: auto; }
 
-.pipes-itemTitle, .pipes-itemDetails {
+.pipes-itemTitle, .itemRecap-title, .pipes-itemDetails {
   height: 2em;
   line-height: 2.5em;
   font-family: cursive;
   color: #979898;
   display: inline-block; }
 
-.pipes-itemTitle {
+.pipes-itemTitle, .itemRecap-title {
   width: 40%;
   font-family: "Kaushan";
   font-size: 2em;
   text-indent: 0.5em; }
   @media (max-width: 780px) {
-    .pipes-itemTitle {
+    .pipes-itemTitle, .itemRecap-title {
       width: 45%;
       font-size: 1.5em; } }
   @media (max-width: 430px) {
-    .pipes-itemTitle {
+    .pipes-itemTitle, .itemRecap-title {
       font-size: 1.5em;
       text-indent: 0.25em; } }
 
@@ -220,24 +309,184 @@ p, .text {
     .actionIcon {
       width: 12%; } }
 
-.pipes-price {
+.pipes-price, .itemRecap-unitPrice {
   display: inline-block;
   width: 33%;
   font-size: 1.5em; }
   @media (max-width: 780px) {
-    .pipes-price {
+    .pipes-price, .itemRecap-unitPrice {
       font-size: 1.2em;
       width: 48%; } }
   @media (max-width: 430px) {
-    .pipes-price {
+    .pipes-price, .itemRecap-unitPrice {
       font-size: 0.75em;
       width: 35%; } }
-  .pipes-price .unit {
-    display: inline-block;
-    float: left; }
-  .pipes-price .quantity {
-    display: inline-block;
-    float: right; }
+
+.unit, .itemRecap-unitPrice-unit {
+  display: inline-block;
+  float: left; }
+
+.quantity, .itemRecap-unitPrice-price {
+  display: inline-block;
+  float: right; }
+
+.addToBasket {
+  background: url("/assets/icons/shopping_cart.png") center center no-repeat;
+  background-size: contain;
+  height: 100%; }
+
+.inBasket {
+  background: url("/assets/icons/checkmark.png") center center no-repeat;
+  background-size: contain;
+  height: 100%; }
+
+.showInfo {
+  background: url("/assets/icons/document.png") center center no-repeat;
+  background-size: contain;
+  height: 100%; }
+
+.pipes {
+  margin: 0 0 3.5em 0.5%;
+  width: 99.75%; }
+
+.pipes-itemContainer {
+  width: 49%;
+  margin: 0.25em 0.25%;
+  display: inline-block; }
+  @media (max-width: 430px) {
+    .pipes-itemContainer {
+      width: 98%; } }
+
+.pipes-carousel {
+  width: 100%;
+  height: 60vh;
+  background-color: #d8dada;
+  background: rgba(216, 218, 218, 0.1);
+  position: relative; }
+  @media (max-width: 780px) {
+    .pipes-carousel {
+      height: 22vh; } }
+  @media (max-width: 430px) {
+    .pipes-carousel {
+      height: 30vh; } }
+
+.pipes-carousel-arrowRight, .pipes-carousel-arrowLeft {
+  position: relative;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  display: inline-block;
+  z-index: 3; }
+
+.pipes-carousel-arrowRight {
+  float: right;
+  margin-right: 2.5%;
+  border-left: 1em solid #272727; }
+
+.pipes-carousel-arrowLeft {
+  float: left;
+  margin-left: 2.5%;
+  border-right: 1em solid #272727; }
+
+.pipes-carousel-image {
+  display: block;
+  max-height: 60vh;
+  max-width: 100%;
+  margin: auto; }
+  @media (max-width: 780px) {
+    .pipes-carousel-image {
+      max-height: 22vh; } }
+  @media (max-width: 430px) {
+    .pipes-carousel-image {
+      max-width: 80%;
+      max-height: 30vh; } }
+
+.pipes-titleDetails {
+  margin-bottom: 0.5em; }
+
+.pipes-itemDescription {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: auto;
+  height: 60vh;
+  background-color: grey;
+  opacity: 0.7;
+  z-index: 2; }
+  @media (max-width: 780px) {
+    .pipes-itemDescription {
+      height: 22vh; } }
+  @media (max-width: 430px) {
+    .pipes-itemDescription {
+      height: 30vh; } }
+  .pipes-itemDescription .text {
+    width: 40%;
+    margin: auto; }
+
+.pipes-itemTitle, .itemRecap-title, .pipes-itemDetails {
+  height: 2em;
+  line-height: 2.5em;
+  font-family: cursive;
+  color: #979898;
+  display: inline-block; }
+
+.pipes-itemTitle, .itemRecap-title {
+  width: 40%;
+  font-family: "Kaushan";
+  font-size: 2em;
+  text-indent: 0.5em; }
+  @media (max-width: 780px) {
+    .pipes-itemTitle, .itemRecap-title {
+      width: 45%;
+      font-size: 1.5em; } }
+  @media (max-width: 430px) {
+    .pipes-itemTitle, .itemRecap-title {
+      font-size: 1.5em;
+      text-indent: 0.25em; } }
+
+.pipes-itemDetails {
+  width: 58%;
+  text-align: right;
+  display: inline-block;
+  vertical-align: bottom; }
+  @media (max-width: 780px) {
+    .pipes-itemDetails {
+      width: 52%; } }
+
+.actionIcon {
+  display: inline-block;
+  vertical-align: top;
+  width: 12%;
+  margin-right: 0.5em; }
+  @media (max-width: 780px) {
+    .actionIcon {
+      width: 16%; } }
+  @media (max-width: 430px) {
+    .actionIcon {
+      width: 12%; } }
+
+.pipes-price, .itemRecap-unitPrice {
+  display: inline-block;
+  width: 33%;
+  font-size: 1.5em; }
+  @media (max-width: 780px) {
+    .pipes-price, .itemRecap-unitPrice {
+      font-size: 1.2em;
+      width: 48%; } }
+  @media (max-width: 430px) {
+    .pipes-price, .itemRecap-unitPrice {
+      font-size: 0.75em;
+      width: 35%; } }
+
+.unit, .itemRecap-unitPrice-unit {
+  display: inline-block;
+  float: left; }
+
+.quantity, .itemRecap-unitPrice-price {
+  display: inline-block;
+  float: right; }
 
 .addToBasket {
   background: url("/assets/icons/shopping_cart.png") center center no-repeat;
@@ -255,4 +504,56 @@ p, .text {
   height: 100%; }
 
 .checkout-items {
-  margin-top: 7em; }
+  width: 90%;
+  margin: auto;
+  list-style-type: none; }
+
+.checkout-itemRecap-container {
+  margin: 1em 0;
+  width: 100%;
+  height: 20vh; }
+
+.checkout-itemRecap-cell {
+  display: table-cell;
+  vertical-align: middle; }
+
+.itemRecap-quantity {
+  width: 10%; }
+
+.itemRecap-imageContainer {
+  height: 100px;
+  width: 100px;
+  text-align: center; }
+
+.itemRecap-image {
+  max-height: 100px;
+  max-width: 100px;
+  margin: auto; }
+
+.itemRecap-title {
+  width: 50%; }
+
+.itemRecap-unitPrice {
+  font-family: cursive;
+  color: #979898;
+  width: 20%; }
+
+.checkout-itemRecap-cell.remove {
+  background: url("/assets/icons/trash.png") center center no-repeat;
+  background-size: 30%; }
+
+.checkout-itemRecap-removedItem {
+  background: yellow; }
+
+label {
+  color: white; }
+
+.details {
+  width: 40%;
+  margin: auto; }
+  @media (max-width: 430px) {
+    .details {
+      width: 80%; } }
+
+.cardDetails {
+  width: 40%; }
