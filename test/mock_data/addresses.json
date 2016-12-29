@@ -1,0 +1,31 @@
+{
+  "easyPost": {
+    "ok": [{
+      "name": "Dr. Steve Brule",
+      "street1": "179 N Harbor Dr",
+      "city": "Redondo Beach",
+      "state": "CA",
+      "zip": "90277",
+      "country": "US",
+      "phone": "310-808-5243"
+    }, {
+      "name": "Mr. Pipe Lover",
+      "street1": "179 N Harbor Dr",
+      "street2": "Floor 1",
+      "city": "Redondo Beach",
+      "state": "CA",
+      "zip": "90277",
+      "country": "US",
+      "phone": "310-808-5243"
+    }],
+    "notOk": {
+      "name": "Dr. Steve Brule",
+      "street1": "179 N Harbor Dr",
+      "city": "Redondo Beach",
+      "state": "CA",
+      "zip": "90277",
+      "country": "US",
+      "phone": "310-808-5243"
+    }
+  }
+}
