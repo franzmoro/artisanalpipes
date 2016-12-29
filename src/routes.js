@@ -35,6 +35,14 @@ module.exports = o => {
     path: '/billing',
     handler: handlers.views.billing
   }, {
+    method: 'POST',
+    path: '/shipping',
+    handler: handlers.views.shipping
+  }, {
+    method: 'GET',
+    path: '/shipping-options',
+    handler: handlers.shippingOptions
+  }, {
     // STATIC CONTENT
     method: 'GET',
     path: '/{param*}',
