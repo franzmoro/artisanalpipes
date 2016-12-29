@@ -347,7 +347,6 @@ riot.tag2('billingdetails', '<div class="billingDetailsContainer"> <form class="
 
     };
     this.conditionalAutoComplete = (e) => {
-      console.log('e.target', e.target.checked);
       autoComplete(e.target.checked);
     };
     if (opts.saved) {
@@ -463,7 +462,18 @@ riot.tag2('shippingdetails', '<div class="shippingDetailsContainer"> <form class
     autoFill();
 });
 
-riot.tag2('shipping', '<header></header> <div class="header-separator"></div> <checkoutsubheader stage="{opts.stage}"></checkoutSubHeader> <div class="checkoutHeader-separator"></div> <h1>Shipping Details</h1> <shippingdetails saved="{opts.saved}"></shippingDetails> <a href="/billing" onclick="{setShippingDetails}" class="proceed">Proceed to Billing</a>', '', '', function(opts) {
+riot.tag2('shipping', '<header></header> <div class="header-separator"></div> <checkoutsubheader stage="{opts.stage}"></checkoutSubHeader> <div class="checkoutHeader-separator"></div> <h1>Shipping Details</h1> <shippingdetails saved="{opts.saved}"></shippingDetails> <button onclick="{getShippingOptions}">See shipment options</button> <a href="/billing" onclick="{setShippingDetails}" class="proceed">Proceed to Billing</a>', '', '', function(opts) {
+    this.getShippingOptions = () => {
+      const xhr = new XMLHttpRequest;
+      xhr.onreadystatechange = () => {
+        if (xhr.statusCode === 200 && xhr.readyState === 4) {
+          console.log('ready', xhr.responseText);
+        }
+      }
+      xhr.open('GET', `/shipping-options?to_address=argul&basket=n121,n123`);
+      xhr.send();
+    };
+
     this.setShippingDetails = () => {
       sessionStorage.setItem(
         'shipping',
@@ -482,6 +492,9 @@ riot.tag2('shipping', '<header></header> <div class="header-separator"></div> <c
     if (typeof Storage !== 'undefined') {
       opts.saved = JSON.parse(
         sessionStorage.getItem('shipping') ||
-        '{"name":"","address":{}}');
+        '{"name":"","address":{}}'
+      );
+    } else {
+      opts.saved = { name : '', address: {} }
     }
 });
