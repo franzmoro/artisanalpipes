@@ -6,19 +6,57 @@ html, body, img, div, li, ul, a, p {
 }
 
 body {
-  background: linear-gradient(90deg,
+  height: 100%;
+  background: linear-gradient(45deg,
     $light-brown,
-    $dark-brown 10%,
+    $dark-brown 5%,
+    $light-brown 10%,
+    $dark-brown 15%,
     $light-brown 20%,
-    $dark-brown 30%,
+    $dark-brown 25%,
+    $light-brown 30%,
+    $dark-brown 35%,
     $light-brown 40%,
-    $dark-brown 50%,
-    $dark-brown 60%,
+    $dark-brown 45%,
+    $light-brown 50%,
+    $dark-brown 55%,
+    $light-brown 60%,
+    $dark-brown 65%,
     $light-brown 70%,
-    $dark-brown 80%,
+    $dark-brown 75%,
+    $light-brown 80%,
+    $dark-brown 85%,
     $light-brown 90%,
-    $dark-brown 100%
+    $dark-brown 95%,
+    $light-brown 100%
   );
+}
+span.hide {
+  display: none;
+}
+p, .text {
+  font-family: $text-font;
+  font-size: 1em;
+}
+h1 {
+  text-align: center;
+  color: $header-endingColor;
+  font-family: $title-font;
+  margin: 0.5em 0;
+
+  @media (max-width: $mobile) {
+    font-size: 1.5em;
+  }
+}
+input[type=text], select {
+  width: 100%;
+  margin: 0.15em 0;
+  height: 2.5em;
+  background-color: $header-startingColor;
+  color: white;
+}
+a {
+  text-decoration: none;
 }
 
 .pointer {
@@ -27,10 +65,39 @@ body {
 .hide {
   display: none;
 }
-span.hide {
-  display: none;
+.header-separator {
+  height: $header-height;
+  @media (max-width: $mobile) {
+    height: $header-height * (2/3);
+  }
 }
-p, .text {
-  font-family: $text-font;
-  font-size: 1em;
+.header-separator {
+  height: $header-height;
+  @media (max-width: $mobile) {
+    height: $header-height * (2/3);
+  }
+}
+.checkoutHeader-separator {
+  height: $checkoutHeader-height;
+  @media (max-width: $mobile) {
+    height: $checkoutHeader-height / 2;
+  }
+}
+.proceed {
+  float: right;
+  margin-right: 10%;
+  margin-bottom: 2em;
+  color: white;
+  font-family: $title-font;
+  font-size: 1.75em;
+  @media (max-width: $mobile) {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+}
+.group {
+  margin: 0.5em 0;
+  @media (max-width: $mobile) {
+    margin: 0.35em 0;
+  }
 }

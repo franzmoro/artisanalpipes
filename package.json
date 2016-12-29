@@ -31,6 +31,7 @@
     "hapi": "^15.2.0",
     "hapi-riot": "^2.1.0",
     "inert": "^4.0.3",
+    "node-easypost": "^2.1.1",
     "redis": "^2.6.3",
     "riot": "^3.0.1",
     "vision": "^4.1.1"
