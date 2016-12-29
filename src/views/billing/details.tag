@@ -46,7 +46,6 @@
       // this.tags.addressdetails.autoFill();
     };
     this.conditionalAutoComplete = (e) => {
-      console.log('e.target', e.target.checked);
       autoComplete(e.target.checked);
     };
     if (opts.saved) {
